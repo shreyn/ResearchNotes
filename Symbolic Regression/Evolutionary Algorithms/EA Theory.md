@@ -4,6 +4,13 @@
 	- Ex: Let population be:
 
 
+
+
+
+
+
+
+
 | Individual | Fitness     |
 | ---------- | ----------- |
 | A          | 0.1 (best)  |
