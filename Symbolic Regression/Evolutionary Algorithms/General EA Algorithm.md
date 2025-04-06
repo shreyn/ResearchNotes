@@ -34,6 +34,6 @@ $$P^0 = {x_1^{0}, x_2^{0}, ... , x_{\mu}^{0}} \subseteq X$$
 					- $x^* = min_{s \in S} f(s)$ 
 				4. Add $x^*$ to parent pool
 				5. Repeat $\lambda$ times $\Rightarrow$ parent pool of size $\lambda$
-			- [[EA Theory]] (the choice of k)
+			- [[EA Theory#Selection Pressure]]$ (the choice of k)
 				- 
 		
