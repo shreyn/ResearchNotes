@@ -1,1 +1,1 @@
-[[EA Notes]]
+[[General EA Algorithm]]
