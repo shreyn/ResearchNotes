@@ -17,9 +17,9 @@ ___
 	- randomly generate initial population
 $$P^0 = {x_1^{0}, x_2^{0}, ... , x_{\mu}^{0}} \subseteq X$$
 2. **<u>Evolution Loop</u>** 
-	1. Evaluate Fitness
+	1. **Evaluate Fitness**
 		- $\forall x \in P^{(t-1)}, f(x)$
-	2. Select Parents
+	2. **Select Parents**
 		- create a selection operator $Select(P^{t-1}, \lambda)$, which selects $\lambda$ parents from current population based on fitness
 		- **Tournament Selection**: run a "mini competition" among a small group of individuals, select the winner
 			- Parameters:
@@ -35,7 +35,7 @@ $$P^0 = {x_1^{0}, x_2^{0}, ... , x_{\mu}^{0}} \subseteq X$$
 				4. Add $x^*$ to parent pool
 				5. Repeat $\lambda$ times $\Rightarrow$ parent pool of size $\lambda$
 			- [[EA Theory#Selection Pressure]] (the choice of k)
-	3. Variation
+	3. **Variation**
 		- Using the selected parents, we want to create offspring that explore the search space and combine useful traits. 
 		1. Crossover:
 			- Takes 2 parents, exchanges parts of their representation to create children
@@ -54,7 +54,7 @@ $$P^0 = {x_1^{0}, x_2^{0}, ... , x_{\mu}^{0}} \subseteq X$$
 			- Crossover rate: % of parent pool that undergoes crossover
 			- Mutation rate: chance of mutation per individual / gene
 			- Mutation strength: size of mutation
-	4. Replacement
+	4. **Replacement**
 		- after forming new offspring, who makes it to the next generation?
 			- rule for forming next population from current pop. and new offspring
 		- Common Strategies:
@@ -63,5 +63,16 @@ $$P^0 = {x_1^{0}, x_2^{0}, ... , x_{\mu}^{0}} \subseteq X$$
 				- We have fitness for $\mu$ already, calculate fitness for $\lambda$
 				- Combine $\mu$ and $\lambda$ into one list, rank this combined list by fitness
 				- Select the $\mu$ best individuals (keeps population size fixed)
-				- 
+			2. ($\mu , \lambda$) replacement
+				- "ignore" old population, only look at offspring
+				- keep $\mu$ best individuals from offspring only
+				- Stronger selection pressure, promotes exploration, but risk of forgetting good individuals too quickly
+			3. Steady State replacement (fitness aware)
+				- compare an offspring to the worst in current pop. 
+				- If offspring is better, "kill" the worst one in current pop, insert offspring. Else discard child.
+				- Repeat for all offspring
+		- Elitism:
+			- Regardless of strategy, can force best $E$ individuals to survive to next pop
+3. <u>Repeat Evolution Loop</u>, until goal is reached / $T$ generations
+4. 
 		
