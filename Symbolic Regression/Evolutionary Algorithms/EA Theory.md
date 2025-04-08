@@ -53,14 +53,46 @@ $$P_r = \left(1-\frac{r-1}{\mu}\right)^k - \left(1-\frac{r}{\mu}\right)^k$$
 	- $m(H, t)$ : number of individuals at pop. $P_t$ that match schema $H$.
 	- $\bar f(t)$ : average fitness of population at generation $t$. 
 	- $\hat f(H)$ : average fitness of individuals matching schema $H$. 
+	- $p_c$ : prob. of crossover occurring
+	- $p_m$ : prob. of mutation occurring
+	- Higher fitness is better
 - Statement:
 $$E[m(H, t+1)] \geq \left(m(H, t) \cdot \frac{\hat f(H)}{\bar f(t)} \cdot \left(1-p_c \cdot \frac{\delta (H)}{l-1}\right)\cdot \left(1-p_m\right)^{o(H)}\right)$$
 	- Breakdown:
 		- $E[m(H,t+1)]$ : expected number of individuals matching schema $H$ at generation $t+1$. 
 		- $m(H,t)$ : number of individuals currently matching schema $H$ (starting count before selection, variation)
-		- 
-
-
+		- $\frac{\hat f(H)}{\bar f(t)}$ : selection pressure. 
+			- $\Rightarrow$ If $\hat f(H) > \bar f(t)$ (schema fitness > overall fitness), the schema is more likely to be selected for reproduction 
+		- $1-p_c \cdot \frac{\delta(H)}{l-1}$ chance that schema $H$ is preserved during crossover
+			- $l-1$ : number of possible crossover points
+			- If crossover occurs, the schema survives iff the crossover point falls *outside* the defining length
+			- $\frac{\delta(H)}{l-1}$ : chance that crossover point falls within defining length (disrupting schema)
+			- $p_c \cdot \frac{\delta(H)}{l-1}$ : prob. that crossover occurs and disrupts schema
+			- $\Rightarrow$ Penalizes longer schema (larger $\delta (H)$), since the crossover point has more opportunity to land in the wider schema region. 
+		- $(1-p_m)^{o(H)}$ : prob. that mutation does not affect schema $H$.
+			- $1-p_m$ : prob that each bit does not mutate
+			- raising to $o(H)$ gives prob that all of the fixed positions don't mutate.
+			- $\Rightarrow$ higher order schema are more likely to be disrupted by mutation (more fixed positions, more spots for disruption)
+	- In other words,
+		- The expected number of those matching schema $H$ in the next generation is at least: the number that match $H$ now, times the relative fitness of the schema, times the chance it survives crossover, times the chance it survives mutation.
+		- ==$\Rightarrow$ short, low-order schema with above average fitness tend to survive and grow==
+			- these "good traits" will spread $\Rightarrow$ Building Block Hypothesis
+	- **Building Block Hypothesis**:
+		- building blocks (short, low order schema with high fitness) are the basic units of good solutions
+		- because of the design of EA, the algorithm preserves, amplifies, and combines these building blocks
+		- $\Rightarrow$ even without knowing the structure of $f$, EA can converge on good solutions
+- Schema Theory gives a theoretical justification for how EAs intelligently search. They exploit patterns (schemata).
+	- EA biases towards structures that have good fitness and that are compact and stable
+	- over time, these good traits are amplified, so EA converges to the optimal solution.
+---
+## Drift and Premature Convergence
+- **Genetic Drift**: random fluctuations in genotype frequencies, even without selection pressure, that dominate
+	- causes some traits to be chosen more purely by chance
+- Over time, drift can lead to loss of some genotypes, and these can't return unless mutation reintroduces them.
+	- reduces genetic diversity
+- **Premature Convergence**: (local optima)
+	- all individuals become similar, so crossovers become ineffective
+- Therefore, it is important to maintain strong mutations to promote diversity. 
 
 
 
