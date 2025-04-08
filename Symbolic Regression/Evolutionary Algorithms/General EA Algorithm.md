@@ -35,5 +35,33 @@ $$P^0 = {x_1^{0}, x_2^{0}, ... , x_{\mu}^{0}} \subseteq X$$
 				4. Add $x^*$ to parent pool
 				5. Repeat $\lambda$ times $\Rightarrow$ parent pool of size $\lambda$
 			- [[EA Theory#Selection Pressure]] (the choice of k)
-		- 
+	3. Variation
+		- Using the selected parents, we want to create offspring that explore the search space and combine useful traits. 
+		1. Crossover:
+			- Takes 2 parents, exchanges parts of their representation to create children
+				- "exploitation": combining useful building blocks from individuals
+			- Ex: Vectors
+				- Let parents be $x_{1} = [1.5, 2.0, 3.7],  x_{2} = [4.0, 1.0, 2.5]$. 
+				- Arithmetic crossover (average): child $= \alpha x_{1} + (1-\alpha)x_{2}, \alpha \in [0, 1]$
+				- For $\alpha = 0.5$, child = $[2.75, 1.5, 3.1]$
+			- Keeps children "in between" the parents
+		2. Mutation:
+			- takes the child, makes a small, random change to part of its representation
+				- "exploration": venturing out into new regions of search space (prevents premature convergence)
+			- Ex: small noise to a vector
+				- child = $[1,2,3] \rightarrow [1.2, 1.9, 3]$ 
+		- Key Params:
+			- Crossover rate: % of parent pool that undergoes crossover
+			- Mutation rate: chance of mutation per individual / gene
+			- Mutation strength: size of mutation
+	4. Replacement
+		- after forming new offspring, who makes it to the next generation?
+			- rule for forming next population from current pop. and new offspring
+		- Common Strategies:
+			1. ($\mu + \lambda$) replacement
+				- $\mu$: current population, $\lambda$: offspring
+				- We have fitness for $\mu$ already, calculate fitness for $\lambda$
+				- Combine $\mu$ and $\lambda$ into one list, rank this combined list by fitness
+				- Select the $\mu$ best individuals (keeps population size fixed)
+				- 
 		
