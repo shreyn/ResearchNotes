@@ -56,6 +56,7 @@ $$P_r = \left(1-\frac{r-1}{\mu}\right)^k - \left(1-\frac{r}{\mu}\right)^k$$
 $$E[m(H, t+1)] \geq \left(m(H, t) \cdot \frac{\hat f(H)}{\bar f(t)} \cdot \left(1-p_c \cdot \frac{\delta (H)}{l-1}\right)\cdot \left(1-p_m\right)^{o(H)}\right)$$
 	- Breakdown:
 		- $E[m(H,t+1)]$ : expected number of individuals matching schema $H$ at generation $t+1$. 
+		- $m(H,t)$ : number of individuals currently matching schema $H$ (starting count before selection, variation)
 		- 
 
 
