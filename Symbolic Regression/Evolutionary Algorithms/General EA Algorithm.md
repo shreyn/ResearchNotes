@@ -74,5 +74,5 @@ $$P^0 = {x_1^{0}, x_2^{0}, ... , x_{\mu}^{0}} \subseteq X$$
 		- Elitism:
 			- Regardless of strategy, can force best $E$ individuals to survive to next pop
 3. <u>Repeat Evolution Loop</u>, until goal is reached / $T$ generations
-4. 
-		
+
+	

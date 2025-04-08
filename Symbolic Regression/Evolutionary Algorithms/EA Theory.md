@@ -1,4 +1,4 @@
-# Selection Pressure
+## Selection Pressure
 - $\Rightarrow$ how strongly the EA favors better performing individuals (given a group of individuals, who gets to be a parent?)
 	- high pressure = fast convergence, risk of local minima; low pressure = slow progress, higher diversity
 	- Ex: Let population have fitness: 
@@ -35,14 +35,14 @@
 			- Ex: $1 - \frac{29}{100} = \frac{71}{100}$ (includes r, plus everyone who is higher)
 		- Therefore,
 $$P_r = \left(1-\frac{r-1}{\mu}\right)^k - \left(1-\frac{r}{\mu}\right)^k$$
-# No Free Lunch Theorem
+## No Free Lunch Theorem
 - $\Rightarrow$ ==There is no universally best optimization algorithm. Averaged across all possible problems, every optimizer performs equally.== 
 	- Holds true for any optimizer
 - If an algorithm works well on some problems, it will perform worse on others.
 - This means optimizers *must* exploit specific function structure to perform well.
 - In the context of EA, crossovers, mutations, and selection must align with problem-specific properties.
 
-# Schema Theory (Fundamental Theorem of EA)
+## Schema Theory (Fundamental Theorem of EA)
 - Let $X = \{0, 1\}^l$ be a space of binary strings of length $l$. A **schema** is a template for $\{0, 1, *\}^l$, where $*$ is a wildcard ($0$ or $1$). 
 	- Ex: $H = 1 * 0 * 1 = \{10001, 11001, 10011, 11011\}$
 - Define:
