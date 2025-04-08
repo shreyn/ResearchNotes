@@ -93,7 +93,8 @@ $$E[m(H, t+1)] \geq \left(m(H, t) \cdot \frac{\hat f(H)}{\bar f(t)} \cdot \left(
 - **Premature Convergence**: (local optima)
 	- all individuals become similar, so crossovers become ineffective
 - Therefore, it is important to maintain strong mutations to promote diversity. 
-
+---
+## Markov Chains
 
 
 
