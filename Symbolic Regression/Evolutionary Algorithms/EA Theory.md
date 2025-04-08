@@ -21,4 +21,8 @@
 				- $P[x=3] = P[x\geq 3] - P[x \geq 4]$
 					$\Rightarrow$ $P[x\geq 3]: \{3, 4, 5, 6 \}, P[x\geq 4]: \{4, 5, 6\}$ 
 					$\Rightarrow$ $P[x \geq 3] - P[x \geq 4] = P[3]$
-			- 
+		- What is the prob that a group of $k$ individuals includes someone of rank $r$, and no one better?
+			- $P_{r}$(best rank in group is $r$) = $P_r$ (everyone in group is <u>rank r or worse</u> ) $-$ $P_r$ (everyone in group is <u>strictly worse than rank r </u>) 
+			- The difference is therefore prob when rank $r$ is in the group, and it is the best
+	- <u>Formula</u>:
+		- 
