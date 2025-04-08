@@ -12,7 +12,7 @@ ___
 - Since $X$ is very large / unstructured / discrete, we cannot search exhaustively / with traditional techniques
 	- EA provides a stochastic search procedure
 ---
-## General Algorithm
+## Algorithm
 1. **<u>Initial Population</u>**
 	- randomly generate initial population
 $$P^0 = {x_1^{0}, x_2^{0}, ... , x_{\mu}^{0}} \subseteq X$$
