@@ -1,1 +1,1 @@
-[[General EA Algorithm]]
+[[EA Algorithm]]
