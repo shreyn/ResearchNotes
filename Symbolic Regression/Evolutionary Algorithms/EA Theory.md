@@ -95,15 +95,31 @@ $$P_r = \left(1-\frac{r-1}{\mu}\right)^k - \left(1-\frac{r}{\mu}\right)^k$$
 - Therefore, it is important to maintain strong mutations to promote diversity. 
 ---
 ## Markov Chains
-- A Markov Chain is a stochastic process where **the next state depends only on the current state** (Markov property).
-- Definition: 
-	- Let:
-		- $S$ be a finite set of states (all possible populations)
-		- $X_t \in S$ be the state at time $t$
-	- A process $\{X_0, X_1, ...\}$ is a Markov Chain iff for any time $t$ and any states $s_0, ..., s_t, s_{t+1} \in S$, 
-$$P(X_{t+1}=s_{t+1} | X_t = s_t, X_{t-1} =  $$
-
-
+- <u>Finite Stochastic Processes</u>
+	- $S$ : a finite set of state spaces (set of all possible populations)
+	- $X_t$ : state of a system at time $t$ (population at time $t$). 
+	- $\{X_t\}_{t \in T}$ : stochastic process over each $t \in T$ (evolution of populations over time)
+- <u>Markov Chain</u>
+	- $\Rightarrow$ a finite stochastic process that satisfies the **Markov Property**:
+	-  $\forall s_0, s_1, ..., s_t, s_{t+1},$ 
+$$P(X_{t+1}=s_{t+1} \mid X_t = s_t, X_{t-1} =  s_{t-1}, ..., X_0 = s_0) = P(X_{t+1} = s_{t+1} \mid X_t = s_t)$$
+		- The probability of the next state only depends on the current state (memoryless)
+	- In EAs, the generation $t+1$ is computed only using generation $t$. 
+		- Parents are selected from $X_t$
+		- Variation is applied to offspring
+		- Replacement forms $X_{t+1}$
+		- Therefore, EA is a Markov Chain.
+- <u>Transition Probabilities</u>
+	- For any $i, j \in \{1, 2, ..., T\},$ the **transition probability** is: 
+	$$P_{ij} = P(X_{t+1} = s_j \mid X_t = s_i)$$
+		- $\Rightarrow$ the prob. that the system moves to state $s_j$ at time $t+1$, given it was at state $s_i$ at $t$.
+	- Properties:
+		- nonnegative: $0 \leq P_{ij} \leq 1$
+		- total probability is 1: $\sum^{n}_{j = 1} P_{ij} = 1$ 
+			- the system must move *somewhere* in the next generation
+- <u>Transition Matrix P</u>
+	- Arrange transition probabilities in a matrix:
+$$P = \begin{bmatrix}P_{11} & P_{12} & \cdots & P_{1T} \\ P_{21} & P_{22} & \cdots & P_{2T} \\ \vdots & \vdots & \ddots & \vdots \\ P_{T1} & P_{T2} & \cdots & P_{TT}    \end{bmatrix} \in \mathbb{R}^{T\times T}$$  
 
 
 
