@@ -120,7 +120,13 @@ $$P(X_{t+1}=s_{t+1} \mid X_t = s_t, X_{t-1} =  s_{t-1}, ..., X_0 = s_0) = P(X_{t
 - <u>Transition Matrix P</u>
 	- Arrange transition probabilities in a matrix:
 $$P = \begin{bmatrix}P_{11} & P_{12} & \cdots & P_{1T} \\ P_{21} & P_{22} & \cdots & P_{2T} \\ \vdots & \vdots & \ddots & \vdots \\ P_{T1} & P_{T2} & \cdots & P_{TT}    \end{bmatrix} \in \mathbb{R}^{T\times T}$$  
-
+		- Each row $i$ represents a current state $s_i$
+		- Each col $j$ represents a possible next state $s_j$
+		- Therefore, $P_{ij}$ is the prob. of going from $s_i$ to $s_j$
+	- This transition matrix is **row-stochastic**: the sum of a row is 1
+	- In EA, $P_{ij} = P( \text{EA generates population } s_j \mid \text{current population is } s_j)$
+	- 
+	- 
 
 
 
