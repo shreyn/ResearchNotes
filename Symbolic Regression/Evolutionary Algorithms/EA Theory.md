@@ -132,4 +132,6 @@ $$P = \begin{bmatrix}P_{11} & P_{12} & \cdots & P_{1T} \\ P_{21} & P_{22} & \cdo
 	- The distribution at time $t+1$ is given by:
 $$v_{t+1} = v_t \cdot P$$
 		- Each entry of $v_{t+1}$ is:
+	$$v_{t+1}(j) = \sum^T_{i=1}v_t(i) \cdot P_{ij}$$
+			- In other words, the prob. of being at state $s_j$ at time $t+1$ is equal to the sum of all ways you could reach $s_j$ from each previous state $s_i$, weighted by how likely you were in $s_i$, and the chance of moving to $s_j$
 			- 
