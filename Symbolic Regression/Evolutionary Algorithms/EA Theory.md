@@ -140,3 +140,5 @@ $$v_{t+1} = v_t \cdot P$$
 		- Population distribution after any number of generations:
 			- $v_1 = v_0 P$, $v_2 = v_1P = v_0P^2$, $v_3 = v_2P = v_0P^3$, $\cdots$
 $$v_t = v_0P^t$$
+			- $v_0$ is the initial state vector
+			- 
