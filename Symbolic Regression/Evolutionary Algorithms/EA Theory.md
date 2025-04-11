@@ -125,13 +125,11 @@ $$P = \begin{bmatrix}P_{11} & P_{12} & \cdots & P_{1T} \\ P_{21} & P_{22} & \cdo
 		- Therefore, $P_{ij}$ is the prob. of going from $s_i$ to $s_j$
 	- This transition matrix is **row-stochastic**: the sum of a row is 1
 	- In EA, $P_{ij} = P( \text{EA generates population } s_j \mid \text{current population is } s_j)$
-	- 
-	- 
-
-
-
-
-
-
-
-
+- <u>State Distribution and Evolution Equation</u>
+	- Define $v_t(j) = P(X_t = s_j)$ as the prob. that the system is in state $s_j$ at time $t$
+	- Define $v_t = [v_t(1) \quad v_t(2) \quad \cdots \quad v_t(T)] \in \mathbb{R}^T$  
+		- This vector is a discrete prob. distribution over the state space $S$
+	- The distribution at time $t+1$ is given by:
+$$v_{t+1} = v_t \cdot P$$
+		- Each entry of $v_{t+1}$ is:
+			- 
