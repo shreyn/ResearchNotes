@@ -134,4 +134,9 @@ $$v_{t+1} = v_t \cdot P$$
 		- Each entry of $v_{t+1}$ is:
 	$$v_{t+1}(j) = \sum^T_{i=1}v_t(i) \cdot P_{ij}$$
 			- In other words, the prob. of being at state $s_j$ at time $t+1$ is equal to the sum of all ways you could reach $s_j$ from each previous state $s_i$, weighted by how likely you were in $s_i$, and the chance of moving to $s_j$
-			- 
+		- Therefore, the next generation's population distribution depends on the current population, and on the probabilities of moving to each new population.
+			- This makes sense in the context of EA
+	- Recursive Evolution
+		- Population distribution after any number of generations:
+			- $v_1 = v_0 P$, $v_2 = v_1P = v_0P^2$, $v_3 = v_2P = v_0P^3$, $\cdots$
+$$v_t = v_0P^t$$
