@@ -48,4 +48,6 @@ Therefore, the next generation's distribution depends only on the current genera
 - The distribution $v_t$ encodes how likely you are to select a parent of each fitness.
 - The vector $v_{t+1}$ tells you what the fitness distribution of the next generation will be.
 - Unlike traditional Markov chains where the state space is a finite set of scalars, the state here is a *distribution* ($v_t$)
-- 
+
+
+**It is not possible to create a traditional Markov matrix M, since each entry is a distribution itself.**
