@@ -37,5 +37,6 @@ We want to get $M[j]$, which is the probability distribution that a generated ch
 Therefore,
 $$M[j] = \sum_{i_1=0}^n \sum_{i_2 = 0}^n v(i_1) \cdot v(i_2) \cdot P[i_1][i_2][j]$$
 This is the weighted sum of child fitness probabilities over all possible combinations of parent fitnesses.
-
-Each $M[j]$ is a **new probability distribution**, 
+#### What does $M[j]$ represent?
+Each individual value $M[j]$ gives the expected fraction of children that have fitness $j$.
+The full vector $[M[0], M[1], ..., M[n]]$ is a prob. distribution. This is the next generations fitness distribution, predicted based on the current population fitness distribution $v$ and the behavior described by the tensor $P$.
