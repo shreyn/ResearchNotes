@@ -51,3 +51,8 @@ Therefore, the next generation's distribution depends only on the current genera
 
 
 **It is not possible to create a traditional Markov matrix M, since each entry is a distribution itself.**
+
+
+**BIG CHANGE:**
+Currently, we assume there is completely random selection of the parents (based only on the current distribution). This does not acknowledge the tournament selection process at all. Therefore in this model, there would be practically no convergence to optimal, since the distribution won't be really "moving" to any optimal location. 
+
