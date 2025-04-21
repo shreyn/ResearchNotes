@@ -56,3 +56,5 @@ Therefore, the next generation's distribution depends only on the current genera
 **BIG CHANGE:**
 Currently, we assume there is completely random selection of the parents (based only on the current distribution). This does not acknowledge the tournament selection process at all. Therefore in this model, there would be practically no convergence to optimal, since the distribution won't be really "moving" to any optimal location. 
 
+This needs to be addressed. 
+
