@@ -58,3 +58,6 @@ Currently, we assume there is completely random selection of the parents (based 
 
 This needs to be addressed. 
 
+
+Using Tournament selection results in a nonlinear transition function (so can't use matrix properties)
+
