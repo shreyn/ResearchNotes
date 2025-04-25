@@ -30,4 +30,43 @@ While most SR systems use unary and binary operators (arity of 1 or 2), **multi-
 - In practice, to keep the tree representation simple, such operators are either:
 	- unrolled into binary trees (ex: $(x_1 + x_2) / 2),
 	- or handled explicitly
-- 
+## Context-Free Grammar (CFG)
+#### Why do we need syntax rules?
+Not every arrangement of operators results in a valid expression
+**Operators require a specific number of inputs (arity), and there must be clear rules for how these inputs are connected**
+#### CFG Formal Definition
+$$G = (\mathcal{V}, \Sigma, R, S)$$
+where, 
+- $\mathcal{V}$: finite set of non-terminal symbols (abstract placeholders like "Expression")
+- $\Sigma$: finite set of terminal symbols (operators $\mathcal{O}$ and terminals $\mathcal{T}$)
+- $R$: finite set of production rules, which specify how non-terminals can be replaced by sequences of terminals and non-terminals
+- $S \in \mathcal{V}$: start symbol, representing a complete expression
+#### Example
+**First defining the CFG:** 
+Operator set: $\mathcal{O} = \{+, \times, sin\}$
+Terminals set: $\mathcal{T} = \{x, c\}$, where $x$ is a variable and $c$ is a constant.
+Non-terminal set: $\mathcal{V} = \{E\}$, where $E$ stands for "Expression".
+Start symbol: $S = E$.
+Production rules $R$:
+1. $E \rightarrow E + E$   (addition is binary, arity 2)
+2. $E \rightarrow E \times E$   (multiplication is binary, arity 2)
+3. $E \rightarrow sin(E)$   (sine is unary, arity 1)
+4. $E \rightarrow x$    (variable, arity 0)
+5. $E \rightarrow c$    (constant, arity 0)
+**Deriving Expressions using the Grammar**
+Lets use the above rules to derive
+$$sin(x) + c$$
+Derivation Steps:
+	1. Start with start symbol $E$
+	2. Apply rule (1): 
+$$E \rightarrow E + E$$
+	3. Replace the left $E$ using rule (3): $E \rightarrow sin(E)$:
+$$sin(E) + E$$
+	4. Replace the inner $E$ of sin using rule (4): $E \rightarrow x$:
+$$sin(x) + E$$
+	5. Replace the right $E$ using rule (5): $E \rightarrow c$:
+$$sin(x) + c$$
+**CFG is built based on the arity**.
+
+**Expression Trees are built correctly because the grammar forces that the arity is correct.**
+## Size of Search Space (Tree Enumeration)
