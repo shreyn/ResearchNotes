@@ -11,7 +11,7 @@
 		- A set of terminals (variables $x_i$ and constants)
 	- Find:
 		- An expression $f$ built from $O$ and terminals, s.t. error is minimized
-## Search Space (Expression Trees)
+## [[SR Search Space - Expression Trees]]
 - Mathematical expressions can be represented as trees:
 	- nodes are operators
 	- leaves are variables / constants
