@@ -1,2 +1,2 @@
-[[EA Algorithm]]
+[[Evolutionary Algorithm]]
 [[General Symbolic Regression]]
