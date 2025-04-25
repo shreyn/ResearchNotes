@@ -70,3 +70,32 @@ $$sin(x) + c$$
 
 **Expression Trees are built correctly because the grammar forces that the arity is correct.**
 ## Size of Search Space (Tree Enumeration)
+We have formalized the search space structurally. The next question is how large is this space?
+
+Understanding the size of the search space is critical because it impacts
+- The feasibility of brute force search,
+- The need for heuristic and stochastic methods (like GP),
+- The design of complexity penalties to avoid exploring unnecessarily large regions.
+#### Counting Binary Expression Trees
+We consider the case where all operators are binary (arity 2).
+A full binary tree is a tree where each internal node has exactly two children, and leaves are terminals (variables or constant).
+**Catalan Number Formula**:
+The number of distinct full binary trees with $n$ internal nodes and $n+1$ leaves is given by the $n$-th Catalan number:
+$$C_n = \frac{1}{n+1} \binom{2n}{n}$$
+As $n$ increases, $C_n$ grows roughly like $4^n / n^{3/2}$.
+
+So far, Catalan numbers only count **unlabeled tree structures** (just the shape).
+In SR, however, the internal nodes are labeled with operators, and leaves are labeled from terminals.
+Therefore, the total number of labeled trees is:
+$$N_n = C_n \cdot |\mathcal{O}^n| \cdot |\mathcal{T}^{n+1}|$$
+- $C_n$: number of binary tree shapes with $n$ internal nodes,
+- $|\mathcal{O}^n|$: choices of operators for the $n$ internal nodes,
+- $|\mathcal{T}^{n+1}|$: choices of terminals for the $n+1$ leaves.
+This shows just how the number of possible expression trees explodes combinatorially with $n. (and this is just with binary operators. Unary operators can chain indefinitely).
+#### Why does this explosion matter for Search
+The rapid growth in search space size means that:
+- Exhaustive enumeration of trees is infeasible very quickly,
+- Intelligent search strategies like GP are necessary,
+- Complexity control is critical to make SR practical.
+
+## Complexity Control
