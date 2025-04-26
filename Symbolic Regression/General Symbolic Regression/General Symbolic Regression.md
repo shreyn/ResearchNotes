@@ -30,7 +30,7 @@ $$L(f) = Error(f, D) + \lambda \cdot Complexity(f)$$
 - Scientific discovery
 - Extrapolation: May recover the true underlying relationship
 ## Challenges
-- Search Space explosion: number of possible expression trees grows super-exponentially with depth and operator set size.
+- Search Space explosion ([[SR Search Space - Expression Trees]]): number of possible expression trees grows super-exponentially with depth and operator set size.
 - Non-differentiable: discrete and non-smooth, so classical gradient methods for optimization don't apply
-- Function Equivalence: different expressions can represent the same function
+- [[Functional Equivalence and Redundancy (Semantics)]]: different expressions can represent the same function
 	- Ex: $sin^2(x) + cos^2(x) = 1$
