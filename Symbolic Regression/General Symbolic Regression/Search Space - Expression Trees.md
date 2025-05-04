@@ -98,12 +98,14 @@ The rapid growth in search space size means that:
 - Intelligent search strategies like GP are necessary,
 - Complexity control is critical to make SR practical.
 
-## Complexity Control
+## Complexity Control 
 As we have seen, the number of possible expression trees grows super-exponentially with tree size due to tree structure (Catalan), operator and terminal labeling, and unary operators.
 Without constraints, the search process can easily:
 - Overfit the data by producing overly complex functions that memorize rather than generalize.
 - Spend resources exploring unnecessarily large and complicated regions.
 This motivates the need for complexity control.
+#### Parsimony Principle
+**Occam's Razor**: Among competing hypotheses that explain the data equally well, the simplest one should be preferred.
 #### How to Measure Complexity
 - Tree Size
 	- Total number of nodes (internal + leaves)
