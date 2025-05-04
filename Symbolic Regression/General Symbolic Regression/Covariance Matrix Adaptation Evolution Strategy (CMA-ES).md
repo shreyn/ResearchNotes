@@ -8,4 +8,25 @@ $$x \sim \mathcal{N}(\mu, \Sigma)$$
 - $\mu$ is the center of the cloud (the current best estimate for the constants).
 - $\Sigma$ is a shape matrix (tells how wide the cloud is in each direction, whether it is stretched / rotated)
 The algorithm basically moves around and stretches the "cloud" based on evaluating samples of the cloud.
-
+## Algorithm
+We want to minimize a function:
+$$f : \mathbb{R}^n \rightarrow \mathbb{R}$$
+This $f(\mathbf{x})$ is typically the fitness of a symbolic expression evaluated using constants $\mathbf{x} \in \mathbb{R}^n$.
+#### Initialization
+- Mean (center of search):
+$$\mathbf{m}^{(0)} \in \mathbb{R}^n$$
+	- Starting point of the search
+- Step size:
+$$\sigma^{(0)} > 0$$
+	- Controls the overall spread of the sampling distribution (like the radius of the search ball)
+- Covariance Matrix:
+$$\mathbf{C}^{(0)} = \mathbf{I}_n$$
+	- Start with identity (assume all variables are uncorrelated and equally scaled)
+	- As the algorithm progresses, this matrix will learn variable dependencies and scale directions.
+- Evolution Paths (tracks momentum):
+$$\mathbf{p}_{\sigma}^{(0)} = 0, \hspace{1em} \mathbf{p}_{c}^{(0)} = 0 $$
+	- Used to help smooth out the trajectory in updates 
+#### Iterate for $t$: 
+1. Sampling new candidate solutions
+	- For population size $\lambda$, sample $\lambda$ new candidate constants:
+		
