@@ -29,4 +29,9 @@ $$\mathbf{p}_{\sigma}^{(0)} = 0, \hspace{1em} \mathbf{p}_{c}^{(0)} = 0 $$
 #### Iterate for $t$: 
 1. Sampling new candidate solutions
 	- For population size $\lambda$, sample $\lambda$ new candidate constants:
-		
+$$x_k^{(t)} = m^{(t)} + \sigma^{(t)}\cdot z_k^{(t)}\hspace{0.5em} \text{with} \hspace{0.5em} z_k^{(t)} \sim \mathcal{N}(0, \mathbf{C}^{(t)}) \hspace{0.5em} \text{for} \hspace{0.5em} k = 1, \dots, \lambda$$
+		- $z_k^{(t)}$: sampled "direction + shape" from Gaussian
+		- $\sigma^{(t)}$: how large a step to take
+		- $x_k^{(t)}$: new guess for constants
+	- We draw random samples from a normal distribution centered at current mean and shaped by the current covariance
+- 
