@@ -7,3 +7,5 @@ This "cloud" is modeled by a multivariate normal distribution:
 $$x \sim \mathcal{N}(\mu, \Sigma)$$
 - $\mu$ is the center of the cloud (the current best estimate for the constants).
 - $\Sigma$ is a shape matrix (tells how wide the cloud is in each direction, whether it is stretched / rotated)
+The algorithm basically moves around and stretches the "cloud" based on evaluating samples of the cloud.
+
