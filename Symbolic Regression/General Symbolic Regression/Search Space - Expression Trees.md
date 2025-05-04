@@ -170,3 +170,6 @@ Why is this powerful?
 ##### Preservation of syntax validity
 - Each swapped piece is a subtree, which, by definition, is already a valid expression,
 - Arity is respected at each node, since entire subtrees are swapped, not partial fragments
+#### Constant Optimization
+Once the symbolic structure of an expression is created via crossover and mutation, the numeric constants in the tree (ex: 3 in 3 * x) remain random. Genetic operators are not well-suited to intelligently tune these values. Therefore, a separate local optimization phase is introduced to refine only the constants, improving accuracy quickly without altering the tree structure.
+##### Optimization Methods
