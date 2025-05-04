@@ -1,3 +1,8 @@
+In SR, we are solving two subproblems:
+1. **Structure Search**: what is the right expression tree?
+2. **Constant Optimization**: what are the best values for constants in that tree?
+
+# Structure Search:
 ## Expression Trees Definition
 We define the search space of SR as the set of all trees that are valid under a specified operator set $\mathcal{O}$ and terminal set $\mathcal{T}$.
 
@@ -170,7 +175,7 @@ Why is this powerful?
 ##### Preservation of syntax validity
 - Each swapped piece is a subtree, which, by definition, is already a valid expression,
 - Arity is respected at each node, since entire subtrees are swapped, not partial fragments
-#### Constant Optimization
+# Constant Optimization
 Once the symbolic structure of an expression is created via crossover and mutation, the numeric constants in the tree (ex: 3 in 3 * x) remain random. Genetic operators are not well-suited to intelligently tune these values. Therefore, a separate local optimization phase is introduced to refine only the constants, improving accuracy quickly without altering the tree structure.
 ##### Optimization Methods
 Most robust:
