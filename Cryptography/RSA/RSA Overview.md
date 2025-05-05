@@ -1,5 +1,5 @@
 RSA is in the category of asymmetric cryptography (public and private keys).
-- uses a public key for encryption, and a private key for decryption
+- uses a public key for encryption, and a private key for decnryption
 - Anyone can encrypt, but only the owner can decrypt
 ## Key Generation
 We want to generate two keys:
