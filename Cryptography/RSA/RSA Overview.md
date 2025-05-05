@@ -81,7 +81,7 @@ Once someone knows $p$ and $q$, they can compute $\phi(n)$, and break RSA.
 The reason we use two primes is that it **gives us a composite number $n$ whose totient is still easy to compute if you know the factors**.
 #### Compute Euler's Totient (Proof)
 We use the fact that $p,q$ are primes, so $$\phi(n) = \phi(pq) = (p-1)(q-1)$$
-Euler's Theorem says that if $\gcd(m,n) = 1$, then $m^{\phi(n)}\equiv 1 \mod n$. This implies any multiple of $m^{\phi(n)}$ is equiv to 1 mod n, so
+Euler's Theorem says that if $\gcd(m,n) = 1$, then $m^{\phi(n)}\equiv 1 \mod n$. This implies any multiple of $m^{\phi(n)}$ is equiv to 1 mod n, so 
 $$m^{k\cdot \phi(n)} \equiv 1 \mod n$$
 So if we choose $e, d$ s.t. 
 $$ed \equiv 1 \mod \phi(n)$$
