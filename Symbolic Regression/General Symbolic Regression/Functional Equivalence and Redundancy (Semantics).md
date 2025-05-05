@@ -31,7 +31,7 @@ Use symbolic algebra systems to apply basic algebraic rules, trig and log and ex
 - Simple to implement, and works across arbitrary functions
 - But cannot fully prove equivalence (only provides evidence), so might miss equivalence if sample points are chosen poorly, floating point errors
 #### Canonicalization
-Canonicalization is the process of transforming expression trees into a unique, standardized form.
+Canonicalization is a powerful process of transforming expression trees into a unique, standardized form.
 It does not require proving full functional equivalence. It provides a mechanical procedure that reduces redundancy.
 ##### Examples
 - Commutativity
