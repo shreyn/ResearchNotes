@@ -127,5 +127,25 @@ As shown above, raising the ciphertext by the $d$ private key mod n returns back
 3. String encoding
 	- RSA doesn't encrypt raw strings, so messages are converted to integers via encoding (ex. ASCII)
 
+## Square-and-Multiply (Binary Exponentiation) Algorithm
+We often want to compute:
+$$b^e \mod n$$
+A naive approach is to compute:
+$$b^e = b\cdot b \cdots b \mod n$$
+This takes $O(e)$ multiplications, which is infeasible where $e$ is very large. 
+
+Instead of this, we use **binary exponentiation**.
+1. Convert exponent to binary
+$$e = (e_k e_{k-1} \dots e_0)$$
+2. For the first 1, just list the number
+3. For each subsequent 0, square the current value
+4. For each subsequent 1, square the current value and multiply by the base
+Example: $3^5$
+- $b = 3$, $e = 5$
+- $e = 5 = 101$ (binary) 
+- 1: first one lists the number: 3
+- 0: zero does square: $(3)^2$
+- 1: one does square and multiply: $((3)^2)^2 \cdot 3$
+This algorithm only requires $O$($log$ e) operations.
 
 
