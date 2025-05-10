@@ -25,7 +25,7 @@ $$c_i \equiv m^e \mod n_i$$
 	- $C \equiv m^e \mod n_i$
 - And by CRT, 
 	- $C \equiv m^e \mod N$
-- But since $0 \leq m^e \leq N$, the modulus doesn't reduce anything, so:
+- But since $0 \leq m^e \leq N$ (because $m < n_e$ for all $e$), the modulus doesn't reduce anything, so:
 	- $C = m^e$
 - To find the message, we take the root:
 	- $m = \sqrt[e]{C}$
