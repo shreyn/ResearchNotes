@@ -2,7 +2,7 @@
 Given:
 - Public key $(e,n)$
 - Ciphertext $c = m^e \mod n$
-Can we recover the message $m$ without knowing the private exponent $d$?
+	Can we recover the message $m$ without knowing the private exponent $d$?
 ## Håstad's Broadcast Attack
 Suppose:
 - the same message $m$ is sent to $e$ recipients
