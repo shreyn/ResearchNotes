@@ -10,7 +10,10 @@ Given a set of input-output examples for a task (ex. sorting a list), we want to
 - Generalizes to unseen inputs,
 - Is simple/efficient (fitness constraints)
 
-Search space is described here: [[Algo Discovery Search Space]]
+Search space is described here: [[Search Space - Type Constraints]]
 
-Standard [[Evolutionary Algorithm]] is used to evolve solutions
+**Strongly Typed Genetic Programming (STGP)** is used, which is a variant of traditional [[Evolutionary Algorithm]].
+- Mutation: a randomly generated replacement subtree must match the return type of the node it replaces
+- Crossover: subtrees may only be exchanged if their return types are equal.
+This ensures that every individual in the population is valid, even after variation.
 
