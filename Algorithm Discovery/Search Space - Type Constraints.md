@@ -5,7 +5,8 @@ In algorithm discovery, however, we evolve full programs instead.
 We represent algorithms as **Abstract Syntax Trees (ASTs)**.
 - Each node is a primitive (if, for, +, swap)
 - Leaves are terminals (constants, variables)
-The AST must be **typed**, with each node having a declared return type and input types.
+The AST must be **typed**, with each nod
+e having a declared return type and input types.
 ## Type System
 In order to enforce syntactic correctness, we define a **type system** for each primitive node:
 - Arity (number of inputs)
