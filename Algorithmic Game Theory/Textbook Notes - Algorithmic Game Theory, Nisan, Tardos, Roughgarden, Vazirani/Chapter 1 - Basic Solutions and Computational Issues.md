@@ -15,3 +15,5 @@
 - The only stable solution is that all countries pollute ($n$ cost for all countries), but all countries would have been better off if they all didn't pollute ($3$ cost per country, assume $n > 3$).
 The above games have a unique optimal strategy regardless of what other players play.
 #### Tragedy of the Commons
+- Suppose $n$ people want to use a shared resource (bandwidth of 1). Suppose each person $i$ can choose to use some bandwidth $x_i \in [0,1]$. Assume that the quality of the bandwidth decreases as more is used (rival good). 
+- The players will overuse the common resource s.t. the total value of the resource is less than optimal
