@@ -34,4 +34,20 @@ Not all games have stable solutions.
 
 ## 1.2 Games, Strategies, Costs, and Payoffs
 Now we will define games formally. The games above are all **one-shot simultaneous move** games, where all players simultaneously choose a decision from a set of choices.
-
+### Defining a Simultaneous Move Game
+- Let a game consist of $n$ players. Each player $i$ has a set of possible strategies $S_i$.
+- Each player selects a strategy $s_i \in S_i$, and the strategies selected by all the players can be represented as a vector $s = [s_1, \dots, s_n]$. 
+- To describe a game, we give each player a preference ordering on these outcomes (done by a T, R binary relation on $S$).
+- An easy way to find preferences is to assign a value for each player for each outcome. This can be done through costs or payoffs (interchangeable since cost = -payoff)
+### Standard Form Games and Compactly Represented Games
+- Standard form: listing all possible strategies and associated payoffs
+	- Is convenient for small player games
+- However, for most games, the payoffs can  exponentially increase (routing paths) / infinite (bandwidth example).
+- There are ways to avoid these descriptions (payoffs depend on some players, etc)
+## 1.3 Basic Solution Concepts
+Will formalize the idea of "stability" in section 1.1. 
+### Dominant Strategy Solution
+Def: each player has a unique best strategy, independent of the strategies played by the other players.
+- We would like to use **mechanism design** to design games that have nice dominant strategy solutions.
+#### Vickrey Auction: Designing Games with Dominant Strategy Solutions
+**This is pretty interesting**
