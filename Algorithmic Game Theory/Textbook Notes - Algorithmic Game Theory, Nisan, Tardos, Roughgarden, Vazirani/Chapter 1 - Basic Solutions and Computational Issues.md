@@ -1,4 +1,4 @@
-## Games, Old and New
+## 1.1 Games, Old and New
 ### Prisoner's Dilemma
 ![[Pasted image 20250518184711.png]]
 - The only stable solution is that both players confess (in the other 3 cases, a player can switch to confessing and have a better outcome).
@@ -17,3 +17,21 @@ The above games have a unique optimal strategy regardless of what other players 
 #### Tragedy of the Commons
 - Suppose $n$ people want to use a shared resource (bandwidth of 1). Suppose each person $i$ can choose to use some bandwidth $x_i \in [0,1]$. Assume that the quality of the bandwidth decreases as more is used (rival good). 
 - The players will overuse the common resource s.t. the total value of the resource is less than optimal
+### Coordination
+Multiple outcomes can be stable.
+#### Battle of the Sexes
+ - Boy prefers baseball, girl prefers softball, but they both prefer to play together (not different games).
+ - Both baseball or both softball are stable.
+#### Routing congestion
+- Both players have to send traffic through either route A or route B. Route A is slightly shorter (better) than route B.
+- However, if both players send traffic through same route, there is congestion, and they both suffer.
+### Randomized (Mixed) Strategies
+Not all games have stable solutions.
+#### Penny game
+- Two players each have a penny. They choose either Heads or Tails.
+- Player 1 wins if they match, Player 2 wins if they don't match.
+- There is no optimal strategy; players should just randomize their choices.
+
+## 1.2 Games, Strategies, Costs, and Payoffs
+Now we will define games formally. The games above are all **one-shot simultaneous move** games, where all players simultaneously choose a decision from a set of choices.
+
