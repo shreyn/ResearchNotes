@@ -51,3 +51,15 @@ Def: each player has a unique best strategy, independent of the strategies playe
 - We would like to use **mechanism design** to design games that have nice dominant strategy solutions.
 #### Vickrey Auction: Designing Games with Dominant Strategy Solutions
 **This is pretty interesting**
+Suppose we are faced with designing an auction to sell something.
+Setup:
+- Assume each bidder $i$ has a value $v_i$ for the painting.
+- The payoff for not winning is 0, and payoff for winning at price $p$ is $v_i - p$.
+- We assume each bidder places bid in an envelope at the same time, and we decide who wins using the envelopes.
+How would we design a game for this?
+- Simplest way: winner is the highest bidder, charge him his bid. 
+- This does not have a dominant strategy (the player's strategy depends on what he assumes about the strategies of other players, results in unpredictable behavior).
+**Vickrey's mechanism** (second price auction) solves this.
+- Winner is highest bidder, but he pays the value of the second highest bid (not his highest bid).
+- Each player's dominant strategy is to report his true value as the bid, independent of the other players.
+	- How? If you were to overpay, then 
