@@ -70,3 +70,14 @@ Some properties of Vickrey auction:
 	- One can play the game by just asking for all the player's valuation functions, and basically play the game for them. (revelation principle)
 ### Pure Strategy Nash Equilibrium
 Games rarely have dominant strategy solutions.
+**Nash Equilibrium**: no player can change their strategy and improve their payoff, assuming other players have same strategy. It is in every player's best interest to stick to their strategy.
+- Dominant strategy and Nash equilibria
+- There can be multiple Nash equilibria
+### Mixed Strategy Nash Equilibria
+Pure strategy equilibria are those where each player deterministically plays his strategy.
+However, some games do not have pure strategy equilibria (pennies game).
+However, if players are allowed to randomize, and each player picks either strategy with prob. of 0.5, then there is a stable solution
+- The expected payoff of each player is now 0, and neither player can improve by choosing a different randomization.
+**Mixed strategy**: Suppose each player chooses a prob. distribution over his set of possible strategies.
+- Nash proved that any game with a finite set of players, finite set of strategies, has a Nash equilibrium of mixed strategies.
+- 
