@@ -107,3 +107,29 @@ One method of game playing is following the best response.
 - Repeatedly allow each player to make an improving or best response (where utility of new strategy > utility of old strategy)
 ## 1.5 Refinement of Nash: Games with Turns and Subgame Perfect Equilibrium
 Many games have turns of moves (card games, board games).
+The problem is that Nash is a little difficult to understand in these games.
+#### Ex: Ultimatum Game
+- Seller S tries to sell to Buyer B. 
+- First, seller S offers price $p$. Then Buyer B reacts to the price.
+	- Seller gets payoff $p$. Buyer has value $v$, so payoff is $v-p$ if buys, 0 if doesn't buy.
+- Assume there is full information (the seller knows $v$, so they would just offer price just under $v$)
+	- This leads to the first player (seller) to collect almost all of the profit
+To find Nash:
+- One strategy for Buyer is to buy if price is under $v$. (equilibrium is $v$)
+- However, there are many equilibrium:
+	- Another strategy is buy if price is smaller than $m$ (where $m \leq v$). This leads to equilibrium to be $m$.
+Subgame perfect equilibrium is used to show that the alternate buying strategy (buying at $p = m \leq v$) is unnatural.
+## 1.6 Nash Equilibrium without Full Information: Bayesian Games
+Above games have been with full information (all players know utilities and strategies of all others).
+#### Ex: Bayesian First Price Auction
+- Suppose instead of players knowing all other valuations, they know the valuations from independent probability distributions that are public knowledge.
+- How should player $i$ bid knowing his own valuation $v_i$, and the distribution of valuations of other players?
+## 1.7 Cooperative Games
+The above games are non-cooperative games (each player acts selfishly, and do not coordinate their moves).
+### Strong Nash Equilibrium
+In a cooperative game, w assume that a group of players can change their strategies together, and they all benefit.
+We say a vector of strategies is a **strong Nash Equilibrium** if no subset of the group of players can all together change their strategies, and improve each of their payoffs. 
+- However, very few games have this.
+### Fair Division and Costsharing: Transferable Utility Games
+**Transferable utility**: dividing some value or sharing a cost between some players. 
+## 1.8 Markets and their Algorithmic Issues
