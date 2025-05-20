@@ -133,3 +133,5 @@ We say a vector of strategies is a **strong Nash Equilibrium** if no subset of t
 ### Fair Division and Costsharing: Transferable Utility Games
 **Transferable utility**: dividing some value or sharing a cost between some players. 
 ## 1.8 Markets and their Algorithmic Issues
+Modern capitalist markets use pricing mechanisms that have little intervention. It is therefore natural that economics uses equilibrium theory.
+Algorithms can be used for this analysis.
