@@ -69,3 +69,4 @@ Some properties of Vickrey auction:
 2. Dominant strategy games like Vickrey is very simple to play.
 	- One can play the game by just asking for all the player's valuation functions, and basically play the game for them. (revelation principle)
 ### Pure Strategy Nash Equilibrium
+Games rarely have dominant strategy solutions.
