@@ -29,4 +29,6 @@ $$c_i \equiv m^e \mod n_i$$
 	- $C = m^e$
 - To find the message, we take the root:
 	- $m = \sqrt[e]{C}$
+## Timing Attacks
+### Square-and-Multiply
 [[RSA Overview#Square-and-Multiply (Binary Exponentiation) Algorithm]]
