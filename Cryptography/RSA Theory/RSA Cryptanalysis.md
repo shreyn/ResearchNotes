@@ -31,4 +31,4 @@ $$c_i \equiv m^e \mod n_i$$
 	- $m = \sqrt[e]{C}$
 ## Timing Attacks
 ### Square-and-Multiply
-[[RSA Overview#Square-and-Multiply (Binary Exponentiation) Algorithm]]
+What is Square and Multiply?: [[RSA Overview#Square-and-Multiply (Binary Exponentiation) Algorithm]]
