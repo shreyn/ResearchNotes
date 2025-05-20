@@ -99,3 +99,11 @@ How easy is it to find an equilibrium, and how does natural gameplay lead player
 ### Complexity of Finding Equilibria
 Will be discussed more in Chapter 2, 3. 
 ### Two-Person Zero-Sum Games
+Def: For a choice of strategies, the sum of the payoffs of the two players is zero.
+Linear programming can be used to find solutions to two-person zero-sum games.
+### Best Response and Learning in Games
+It should be the case that natural game playing strategies will lead to the equilibrium over time.
+One method of game playing is following the best response.
+- Repeatedly allow each player to make an improving or best response (where utility of new strategy > utility of old strategy)
+## 1.5 Refinement of Nash: Games with Turns and Subgame Perfect Equilibrium
+Many games have turns of moves (card games, board games).
