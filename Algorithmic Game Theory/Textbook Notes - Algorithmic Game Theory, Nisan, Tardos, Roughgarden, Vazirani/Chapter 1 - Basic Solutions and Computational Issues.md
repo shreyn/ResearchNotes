@@ -94,4 +94,8 @@ Two players drive up to an intersection at the same time. If both cross, there i
 - This has 3 Nash equilibria: two are letting one car cross, the other is a mixed equilibrium where both players cross (very small prob.)
 In correlated equilibrium, a coordinator can choose strategies for both players, but the strategies have to be stable (it is in each player's interest to follow the strategy). 
 - This assumes some external trusted coordinator, etc.
-- 
+## 1.4 Finding Equilibria and Learning in Games
+How easy is it to find an equilibrium, and how does natural gameplay lead players to equilibrium?
+### Complexity of Finding Equilibria
+Will be discussed more in Chapter 2, 3. 
+### Two-Person Zero-Sum Games
