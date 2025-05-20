@@ -71,7 +71,7 @@ Some properties of Vickrey auction:
 ### Pure Strategy Nash Equilibrium
 Games rarely have dominant strategy solutions.
 **Nash Equilibrium**: no player can change their strategy and improve their payoff, assuming other players have same strategy. It is in every player's best interest to stick to their strategy.
-- Dominant strategy and Nash equilibria
+- Dominant strategy are Nash equilibria
 - There can be multiple Nash equilibria
 ### Mixed Strategy Nash Equilibria
 Pure strategy equilibria are those where each player deterministically plays his strategy.
@@ -80,4 +80,18 @@ However, if players are allowed to randomize, and each player picks either strat
 - The expected payoff of each player is now 0, and neither player can improve by choosing a different randomization.
 **Mixed strategy**: Suppose each player chooses a prob. distribution over his set of possible strategies.
 - Nash proved that any game with a finite set of players, finite set of strategies, has a Nash equilibrium of mixed strategies.
+### Games with no Nash Equilibria
+Games with infinite players or infinite strategies may not have Nash equilibria.
+#### Ex: Pricing Game
+Suppose there are 2 players selling to 3 buyers. Each buyer wants to buy 1 unit of product. Buyers A and C only have access to one seller. Buyer B can buy from any of the two sellers.
+The sellers set a price $p_i \in [0,1]$. Buyers A and C buy from sellers 1 and 2, respectively. Buyer B buys from the cheaper seller (ties going to seller 1).
+- One strategy is for each seller to set price of 1, which guarantees income of 1 from A or C (they don't have a choice). 
+- Or, they can also try to compete for B (but they aren't allowed to set different price to B and A/C). 
+	- Each player has uncountably many available strategies ($[0,1]$), and it doesn't have a Nash equilibrium.
+### Correlated Equilibrium
+#### Ex: Intersection (like a STOP sign)
+Two players drive up to an intersection at the same time. If both cross, there is an accident. Successfully crossing has payoff of 1, not crossing pays 0, accident is -100.
+- This has 3 Nash equilibria: two are letting one car cross, the other is a mixed equilibrium where both players cross (very small prob.)
+In correlated equilibrium, a coordinator can choose strategies for both players, but the strategies have to be stable (it is in each player's interest to follow the strategy). 
+- This assumes some external trusted coordinator, etc.
 - 
