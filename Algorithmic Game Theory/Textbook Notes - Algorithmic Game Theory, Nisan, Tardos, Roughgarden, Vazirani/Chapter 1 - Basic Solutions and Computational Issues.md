@@ -49,7 +49,7 @@ Will formalize the idea of "stability" in section 1.1.
 ### Dominant Strategy Solution
 Def: each player has a unique best strategy, independent of the strategies played by the other players.
 - We would like to use **mechanism design** to design games that have nice dominant strategy solutions.
-#### Vickrey Auction: Designing Games with Dominant Strategy Solutions
+### Vickrey Auction: Designing Games with Dominant Strategy Solutions
 **This is pretty interesting**
 Suppose we are faced with designing an auction to sell something.
 Setup:
@@ -61,5 +61,11 @@ How would we design a game for this?
 - This does not have a dominant strategy (the player's strategy depends on what he assumes about the strategies of other players, results in unpredictable behavior).
 **Vickrey's mechanism** (second price auction) solves this.
 - Winner is highest bidder, but he pays the value of the second highest bid (not his highest bid).
-- Each player's dominant strategy is to report his true value as the bid, independent of the other players.
-	- How? If you were to overpay, then 
+- Each player's dominant strategy is to report his true value (telling the truth) as the bid, independent of the other players.
+	- How? Suppose you value at $100. If someone bids less than 100, then you win, pay their price (so you profit). If someone bids more than 100, you lose, pay nothing (profit 0). Either way, you never lose money (overpay).
+Some properties of Vickrey auction:
+1. Winner is the one who values it the most
+	- Goal is to design s.t. selfish players lead to socially optimal outcome.
+2. Dominant strategy games like Vickrey is very simple to play.
+	- One can play the game by just asking for all the player's valuation functions, and basically play the game for them. (revelation principle)
+### Pure Strategy Nash Equilibrium
