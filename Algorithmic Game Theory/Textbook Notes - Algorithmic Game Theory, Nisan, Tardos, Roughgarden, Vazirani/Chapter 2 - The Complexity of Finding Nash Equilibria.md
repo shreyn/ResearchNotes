@@ -1,3 +1,4 @@
+Will come back later..
 ## 2.1 Introduction
 **Nash's theorem says that every finite game has a mixed Nash equilibrium.** 
 How do we find this Nash?
