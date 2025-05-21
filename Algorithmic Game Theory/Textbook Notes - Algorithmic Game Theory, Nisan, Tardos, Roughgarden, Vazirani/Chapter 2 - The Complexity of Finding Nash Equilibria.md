@@ -1,4 +1,6 @@
 Will come back later..
+## MAIN TAKEAWAY: Computing Nash equilibria is hard, so we need ways to approximate/learn instead. 
+
 ## 2.1 Introduction
 **Nash's theorem says that every finite game has a mixed Nash equilibrium.** 
 How do we find this Nash?
