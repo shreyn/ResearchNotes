@@ -32,9 +32,25 @@ $$c_i \equiv m^e \mod n_i$$
 ## (Side-Channel) Timing Attacks
 ### Square-and-Multiply
 What is Square and Multiply?: [[RSA Overview#Square-and-Multiply (Binary Exponentiation) Algorithm]]
-Overview:
+#### Overview
 - RSA Decryption is done through $m = c^d \mod n$.
 	- For speed, this is typically implemented using the square-and-multiply algorithm.
 - For each bit in $d_i$, we square the current val, and if $d_i = 1$, also multiply by $c$. Therefore, **execution time depends on the number and positions of 1s in $d$**.
 - The attacker can therefore recover the private exponent $d$ by measuring how long decryption takes for different known ciphertexts.
+#### Example:
+Let: 
+- $p = 5, q = 11, n= pq = 55$. 
+- $\phi(n) = (p-1)(q-1) = 40$
+- $e = 3$. $gcd(3, 40) = 1$
+- Compute $d$ s.t. $ed \equiv 1 \mod 40$
+	- $3 \cdot 27 \equiv 1 \mod 40$, so $d = 27$.
+Square-And-Multiply:
+- $d = 27 = 11011$ (in binary)
+	- Square (always square first)
+	- Multiply (bit = 1)
+	- Multiply (bit = 1)
+	- nothing (bit = 0)
+	- Multiply (bit = 1)
+	- Multiply (bit = 1)
+- So we expect 4 multiplications, each taking a longer time
 - 
