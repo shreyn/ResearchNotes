@@ -29,6 +29,12 @@ $$c_i \equiv m^e \mod n_i$$
 	- $C = m^e$
 - To find the message, we take the root:
 	- $m = \sqrt[e]{C}$
-## Timing Attacks
+## (Side-Channel) Timing Attacks
 ### Square-and-Multiply
 What is Square and Multiply?: [[RSA Overview#Square-and-Multiply (Binary Exponentiation) Algorithm]]
+Overview:
+- RSA Decryption is done through $m = c^d \mod n$.
+	- For speed, this is typically implemented using the square-and-multiply algorithm.
+- For each bit in $d_i$, we square the current val, and if $d_i = 1$, also multiply by $c$. Therefore, **execution time depends on the number and positions of 1s in $d$**.
+- The attacker can therefore recover the private exponent $d$ by measuring how long decryption takes for different known ciphertexts.
+- 
