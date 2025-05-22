@@ -33,4 +33,8 @@ In CE, players can coordinate their strategies via a shared random signal (trust
 	- They ask "should i really play a_i? What if i deviate?"
 - CE condition: It must be in player $i$'s best interest to follow the suggestion $a_i$.
 	- i.e. payoff of following $a_i \geq$ payoff of deviating to some other action $a'_i$
-	- 
+- Ex: Traffic Light
+	- Traffic light is shared random signal
+	- Everyone follows the rule since if you cross on red, you might crash, so your payoff drops.
+*Skipping over some algorithms for computing Nash and CE...*
+## 7.5 Graphical Exchange Economics
