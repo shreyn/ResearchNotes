@@ -15,4 +15,7 @@ Multiplayer games with large number of players are hard to represent.
 - Each player $i$ is represented by a vertex in a graph $G$. 
 - $N(i) \subseteq \{1, \dots, n\}$ is the neighborhood of player $i$
 	- i.e. the vertices $j$ s.t. the edge $(i,j)$ appears in $G$
-- 
+- $a$ is a vector where $a_i$ is the strategy of $i$
+- $a^i$ is the projection of $a$ onto the players in $N(i)$
+	- i.e. $a^i$ contains only the strategies of player $i$ and its neighbors
+- **Def**: A graphical game is a pair $(G, \mathcal{M})$, where $G$ is a graph over the vertices $\{1, \dots, n\}$, and $\mathcal{M}$ is a set of $n$ local game matrices. 
