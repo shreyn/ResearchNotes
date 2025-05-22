@@ -1,4 +1,18 @@
 ## 7.1 Introduction
 Multiplayer games with large number of players are hard to represent.
 **Graphical games represent multiplayer games where there are large populations, and the payoffs of each player is determined by the actions of a small subpopulation (neighbors).**
-
+## 7.2 Preliminaries
+- A multiplayer game has $n$ players, each with a finite set of pure strategies/actions. 
+- $a_i$ is the action of player $i$. For simplicity, assume a binary action space ($a_i \in {0,1}$). 
+- The payoffs for player $i$ is given by matrix $M_i$
+	- $M_i(a)$ is the payoff to player $i$ from the action $a$.
+- The action 0 and 1 are pure strategies. A mixed strategy is a probability $p_i \in [0,1]$ that the player will play 0.
+- $p[i:p'_i]$ is the prob. distribution which is the same as $p$, except in the $i$th component, where the value has been changed to $p'_i$ .
+- A Nash Equilibrium (NE) is a mixed strategy $p$ s.t. for all players $i$, and any value $p'_i \in [0,1]$,  $M_i(p) \geq M_i(p[i:p'_i])$.
+	- I.e. no player can improve their expected payoff by deviating from the NE. 
+	- An approximate NE is one where no player can improve their payoff by more than some $\epsilon$. 
+**Graphical Game**:
+- Each player $i$ is represented by a vertex in a graph $G$. 
+- $N(i) \subseteq \{1, \dots, n\}$ is the neighborhood of player $i$
+	- i.e. the vertices $j$ s.t. the edge $(i,j)$ appears in $G$
+- 
