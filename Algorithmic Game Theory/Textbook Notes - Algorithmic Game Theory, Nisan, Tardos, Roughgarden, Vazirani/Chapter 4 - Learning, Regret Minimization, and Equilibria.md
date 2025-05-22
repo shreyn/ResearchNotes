@@ -14,4 +14,3 @@ Another method is through **swap/internal regret**.
 - "every time you did X, you should have done Y instead"
 **Partial information model / Multiarmed Bandit (MAB):** 
 - The algo can only observe the loss of the action actually chosen, not of the actions not chosen.
-## 4.2 Model and Preliminaries
