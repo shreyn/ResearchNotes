@@ -22,4 +22,4 @@ Multiplayer games with large number of players are hard to represent.
 	- $\mathcal{M} = \{M_1, \cdots M_n\}$. Each $M_i$ is player $i$'s local payoff function
 	- The input to $M_i$ is not the full $a$, but instead the local projection $a^i$ (strategies of $i$ and its neighbors)
 	- Therefore, $M_i(a^i)$ is the payoff for any player $i$, which depends only on the actions taken by the players in $N(i)$.
-	- 
+**Correlated Equilibria (CE)**:
