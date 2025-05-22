@@ -23,3 +23,14 @@ Multiplayer games with large number of players are hard to represent.
 	- The input to $M_i$ is not the full $a$, but instead the local projection $a^i$ (strategies of $i$ and its neighbors)
 	- Therefore, $M_i(a^i)$ is the payoff for any player $i$, which depends only on the actions taken by the players in $N(i)$.
 **Correlated Equilibria (CE)**:
+In CE, players can coordinate their strategies via a shared random signal (trusted third party).
+- A trusted party samples a joint action
+	- The party uses a probability distribution $P$ over all players' actions (joint distribution)
+	- Picks one joint action $a$
+	- Gives each player $i$ just their own action $a_i$ (a suggestion)
+- Should the player follow the suggestion?
+	- The player knows the distribution $P$, and they were told to play $a_i$.
+	- They ask "should i really play a_i? What if i deviate?"
+- CE condition: It must be in player $i$'s best interest to follow the suggestion $a_i$.
+	- i.e. payoff of following $a_i \geq$ payoff of deviating to some other action $a'_i$
+	- 
