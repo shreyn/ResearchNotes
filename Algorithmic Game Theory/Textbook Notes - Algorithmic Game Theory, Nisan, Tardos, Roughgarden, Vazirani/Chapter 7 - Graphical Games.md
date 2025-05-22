@@ -38,3 +38,10 @@ In CE, players can coordinate their strategies via a shared random signal (trust
 	- Everyone follows the rule since if you cross on red, you might crash, so your payoff drops.
 *Skipping over some algorithms for computing Nash and CE...*
 ## 7.5 Graphical Exchange Economics
+In a standard economic model:
+- Each consumer has a utility function and an endowment (bundle of goods they start with and can trade)
+- Consumers sell their endowment at a price, and buy whatever bundle maximizes their utility.
+Now imagine we restrict who can trade with whom using a graph:
+- Trade is local (can't buy /sell to anyone)
+- Prices depend on who you are connected to
+- 
