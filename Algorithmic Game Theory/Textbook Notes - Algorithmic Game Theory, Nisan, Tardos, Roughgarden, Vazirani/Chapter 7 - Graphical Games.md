@@ -19,3 +19,7 @@ Multiplayer games with large number of players are hard to represent.
 - $a^i$ is the projection of $a$ onto the players in $N(i)$
 	- i.e. $a^i$ contains only the strategies of player $i$ and its neighbors
 - **Def**: A graphical game is a pair $(G, \mathcal{M})$, where $G$ is a graph over the vertices $\{1, \dots, n\}$, and $\mathcal{M}$ is a set of $n$ local game matrices. 
+	- $\mathcal{M} = \{M_1, \cdots M_n\}$. Each $M_i$ is player $i$'s local payoff function
+	- The input to $M_i$ is not the full $a$, but instead the local projection $a^i$ (strategies of $i$ and its neighbors)
+	- Therefore, $M_i(a^i)$ is the payoff for any player $i$, which depends only on the actions taken by the players in $N(i)$.
+	- 
