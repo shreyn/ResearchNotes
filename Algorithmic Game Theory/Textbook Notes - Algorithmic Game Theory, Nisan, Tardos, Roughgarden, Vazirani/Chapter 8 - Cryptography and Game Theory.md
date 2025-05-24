@@ -9,4 +9,7 @@
 		- Malicious - trying to learn about inputs, and influence the computed output value.
 	- We assume there is an adversary who controls all the faulty parties (they work together)
 		- We say that they can "corrupt" up to some threshold $k$ of the $n$ parties
-	- 
+**Security of MPC**:
+- Assume there is a trusted party who privately receives the inputs of all parties, calculates the output $s$, and transmits this value to the parties.
+	- This computes the correct output, and the parties don't learn any info about the others' inputs
+- 
