@@ -18,4 +18,11 @@ Remember from this: [[Chapter 1 - Basic Solutions and Computational Issues#Corre
 - In CE, a trusted third party (mediator) samples a joint strategy from a known public distribution
 	- Tells each player privately what move to make
 	- Equilibrium holds if no player wants to deviate from what they are told
-	- 
+- However, there might not be a trusted mediator.
+	- So can the players implement CE without a mediator?
+- Solution: Multi-Party Computation (MPC)
+	1. Players agree on a known public distribution $P$
+	2. Players jointly run MPC to generate a random joint action from $P$
+	3. The output $a = (a_1, \dots, a_n)$ is split so that each player learns only their own $a_i$. (enforced by MPC)
+	4. By CE, each player has no incentive to deviate
+1. 
