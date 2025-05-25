@@ -14,5 +14,8 @@
 	- This computes the correct output, and the parties don't learn any info about the others' inputs
 	- Called the **ideal model**
 - The security of MPC says that a protocol is secure if: the honest parties compute the same correct outputs as in the ideal model, and the protocol does not expose more information than the interaction with the trusted party (in the ideal model)
-- 
-- 
+Remember from this: [[Chapter 1 - Basic Solutions and Computational Issues#Correlated Equilibrium]]
+- In CE, a trusted third party (mediator) samples a joint strategy from a known public distribution
+	- Tells each player privately what move to make
+	- Equilibrium holds if no player wants to deviate from what they are told
+	- 
