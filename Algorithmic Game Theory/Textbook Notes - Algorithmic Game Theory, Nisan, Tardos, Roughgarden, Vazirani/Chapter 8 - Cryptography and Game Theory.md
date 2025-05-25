@@ -12,4 +12,7 @@
 **Security of MPC**:
 - Assume there is a trusted party who privately receives the inputs of all parties, calculates the output $s$, and transmits this value to the parties.
 	- This computes the correct output, and the parties don't learn any info about the others' inputs
+	- Called the **ideal model**
+- The security of MPC says that a protocol is secure if: the honest parties compute the same correct outputs as in the ideal model, and the protocol does not expose more information than the interaction with the trusted party (in the ideal model)
+- 
 - 
