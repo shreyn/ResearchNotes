@@ -13,4 +13,11 @@
 5. Battery pack assembly
 6. System integrators 
 7. Deployment and operations
-8. 
+
+
+## Notes
+- important differentiator: edge computing
+	- sending data to cloud is slow, lacks privacy (needing in military, etc)
+	- doesnt require large training data for ML
+	- federatted learning (later on)
+	- 
