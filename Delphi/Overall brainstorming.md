@@ -20,4 +20,5 @@
 	- sending data to cloud is slow, lacks privacy (needing in military, etc)
 	- doesnt require large training data for ML
 	- federatted learning (later on)
-	- 
+- OEMs make firmware **in general!!!**
+	- our software can learn the workings per device, then made recommendations, etc.
