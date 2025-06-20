@@ -11,7 +11,7 @@
 3. Battery component manufacturing (components of a cell)
 4. Cell manufacturing (assembly of cells)
 5. Battery pack assembly
-6. System integrators 
+6. **System integrators** 
 7. Deployment and operations
 
 
