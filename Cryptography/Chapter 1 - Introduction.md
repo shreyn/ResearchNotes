@@ -10,6 +10,7 @@ We must assume that the system itself is public, and only the key is private.
 
 - Cryptography: design of secure systems
 - Cryptanalysis: study of breaking down these systems
-- 
+## 1.3 Security Goals
+
 
 
