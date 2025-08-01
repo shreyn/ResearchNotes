@@ -145,3 +145,10 @@ Therefore, the full SPN is invertible.
 Block ciphers have a limitation: only work on fixed-size blocks (e.g. 128 bits, etc). 
 Real world message are arbitrary length. 
 *So how do we encrypt messages longer than one block?*
+### Naive Use: ECB Mode
+ECB: Electronic Codebook Mode
+Simply split the message into blocks, and encrypt each block. 
+Fast and parallelizable, but has a flaw:
+- **The same plaintext block always encrypts to the same ciphertext block**
+	- Leaks patterns, violates IND-CPA
+- ECB penguin
