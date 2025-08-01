@@ -141,3 +141,7 @@ At each round,
 2. Permutation: Reordering the bits from the original position to the new position can be reverted easily
 3. Key Mixing (XOR with key):  XOR has its own inverse since $(x \oplus k) \oplus k = x$
 Therefore, the full SPN is invertible.
+## 2.4 Modes of Operation
+Block ciphers have a limitation: only work on fixed-size blocks (e.g. 128 bits, etc). 
+Real world message are arbitrary length. 
+*So how do we encrypt messages longer than one block?*
