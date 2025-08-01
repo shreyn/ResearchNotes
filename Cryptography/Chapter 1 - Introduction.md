@@ -98,6 +98,5 @@ Suppose you want to encrypt messages that are 1 megabyte long. Then you need a k
 - Therefore, OTP is practically useless for most applications
 Proof here about why if K < M, then not perfectly secret.
 
-
-	  
+So perfect secrecy is great, but not feasible. Therefore, for modern cryptography, we relax the definition and accept that a system is secure if the adversary cannot break it within reasonable time (computational security).
 
