@@ -120,5 +120,21 @@ Decryption:
 Do the reverse of the above, will get back 10110110.
 ### Substitution-Permutation Networks (SPNs)
 Another way to construct a block cipher (PRP).
-
-
+**Def**: SPN is a block cipher construction that repeatedly applies two types of transformations:
+1. **Substitution (S-box)**: Replace small pieces of the state with nonlinear lookups (adds **confusion**)
+2. **Permutation (P-box)**: Rearrange or mix the bits to spread influence (adds **diffusion**)
+Each SPN round looks like:
+- Input block --> Key Mixing (XOR with round key) --> Substution Layer --> Permutation Layer --> repeat
+#### Substitution Layer (S-boxes)
+- Apply a small, fixed nonlinear mapping to parts of the state (like 4-8 bits at a time)
+- Stored as lookup tables
+- Nonlinear (essential for resisting linear/differential cryptanalysis)
+#### Permutation Layer (P-boxes)
+- Rearranges or linearly mixes bits across state
+- Goal is to spread local changes globally
+#### Key Mixing
+At each round,
+- A round key (derived from main key) is XORed into the state
+- Prevents attackers from isolating structure
+- Done before or after S-boxes
+- 
