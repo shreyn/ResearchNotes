@@ -97,7 +97,6 @@ $$L_1 = R_0$$
 $$R_1 \oplus F(L_1, k_i) = L_0$$
 - **So even if $F$ is not invertible, the whole Feistel round is.**
 This is why Feistel is cool! can encrypt and decrypt using the same function, just reversing the order of the keys.
-
 #### Example
 2-round Feistel cipher:
 - Block size: 8 bits --> split into two 4-bit halves
@@ -124,7 +123,7 @@ Another way to construct a block cipher (PRP).
 1. **Substitution (S-box)**: Replace small pieces of the state with nonlinear lookups (adds **confusion**)
 2. **Permutation (P-box)**: Rearrange or mix the bits to spread influence (adds **diffusion**)
 Each SPN round looks like:
-- Input block --> Key Mixing (XOR with round key) --> Substution Layer --> Permutation Layer --> repeat
+- Input block --> Key Mixing (XOR with round key) --> Substitution Layer --> Permutation Layer --> repeat
 #### Substitution Layer (S-boxes)
 - Apply a small, fixed nonlinear mapping to parts of the state (like 4-8 bits at a time)
 - Stored as lookup tables
@@ -137,4 +136,8 @@ At each round,
 - A round key (derived from main key) is XORed into the state
 - Prevents attackers from isolating structure
 - Done before or after S-boxes
-- 
+#### Why is this invertible?
+1. Substitution: The lookup table pairs are like 0111 -> 1000. It is clearly a bijection, since we can go $S^{-1}(1000) = 0111$
+2. Permutation: Reordering the bits from the original position to the new position can be reverted easily
+3. Key Mixing (XOR with key):  XOR has its own inverse since $(x \oplus k) \oplus k = x$
+Therefore, the full SPN is invertible.
