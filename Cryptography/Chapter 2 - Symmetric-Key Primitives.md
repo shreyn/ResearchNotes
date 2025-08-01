@@ -53,4 +53,47 @@ $$c_1 = G(k) \oplus m_1, \hspace{1em} c_2 = G(k) \oplus m_2$$
 $$c_1 \oplus c_2 = (G(k) \oplus m_1) \oplus (G(k)\oplus m_2) = m_1 \oplus m_2$$
 - The XOR of two plaintexts leaks a bunch of info
 - Called a **two-time pad attack**
-- 
+## 2.3 Block Ciphers
+Block cipher is a pseudorandom permutation (PRP). This is a keyed function that acts like a random bijection on fixed-length blocks.
+**Def**: A block cipher is a function:
+$$E : K \times \{0,1\}^n \rightarrow \{0,1\}^m$$
+where:
+- $K$ is the key space (ex. 128 bit keys)
+- $\{0,1\}^n$ is the block space (128 bit blocks)
+- For each key $k \in K$, the function $E_k(x):= E(k,x)$ is:
+	- Efficiently computable
+	- Invertible: exists a function $D_k$ s.t. $D_k(E_k(x)) = x$
+	- Pseudorandom: $E_k$ is indistinguishable from a uniform random permutation by an adversary
+### Pseudorandom Permutation (PRP)
+This is a function that is:
+- Deterministic
+- Bijective (invertible)
+- Efficient
+- Indistinguishable from random permutation
+**So basically the same as PRF, but with the requirement of invertibility.**
+A PRG takes a small input, and converts to a long output (not invertible).
+A Block Cipher takes a fixed size input, outputs a fixed size output (invertible)
+- basically it is a pseudorandom shuffle of the $2^n$ possible n-bit strings.
+- The key is used to inverse it back.
+*How do we build such a permutation? Or, what kind of structure gives us invertibility + pseudorandomness?*
+### Feistel Networks
+This turns a non-invertible function $F$ into an invertible one by splitting the input, using $F$ on part of it, and then swapping.
+- "encrypt half, modify the other half, repeat"
+#### Algorithm:
+Let us say the input $x$ is a bitstring of length $2n$. Split into two $n$-bit halves:
+$$x = (L_0, R_0)$$
+One Feistel round transforms this pair using the round key $k_i$ and a round function $F$:
+$$L_1 = R0$$
+$$R_1= L_0 \oplus F(R_0,k_i)$$
+- NOTE: only one half goes through $F$
+Repeat this for multiple rounds, chaining outputs into inputs (L0--> R1, R0-->L1, ..)
+After $r$ rounds:
+$$(L_r, R_r) = Feistel_k^r(L_0,R_0)$$
+- Each round uses a different subkey $k_i$, derived from the main key.
+#### Why is this Invertible?
+Lets reverse one round:
+Given $(L_1,R_1)$, we can recover:
+$$L_1 = R_0$$
+$$R_1 \oplus F(L_1, k_i) = L_0$$
+- **So even if $F$ is not invertible, the whole Feistel round is.**
+This is why Feistel is cool! can encrypt and decrypt using the same function, just reversing the order of the keys.
