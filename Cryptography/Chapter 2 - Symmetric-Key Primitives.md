@@ -97,3 +97,28 @@ $$L_1 = R_0$$
 $$R_1 \oplus F(L_1, k_i) = L_0$$
 - **So even if $F$ is not invertible, the whole Feistel round is.**
 This is why Feistel is cool! can encrypt and decrypt using the same function, just reversing the order of the keys.
+
+#### Example
+2-round Feistel cipher:
+- Block size: 8 bits --> split into two 4-bit halves
+- Input block: 8 bits total
+- Round keys: $k_1 = 1100$, $k_2 = 0110$
+- Round function: $F(x,k) = (x\oplus k )$ (bitwise XOR)
+- Therefore, $F: \{0,1\} \times \{0,1\}^4 \rightarrow \{0,1\}^4$
+Initial plaintext block: 
+$$P = 10110110 \rightarrow L_0 = 1011, R_0 = 0110$$
+Round 1:
+- Using key $k_1 = 1100$,
+$$L_1 = R_0 = 0110$$
+$$R_1 = L_0 \oplus F(R_0, k_1) = 1011 \oplus (0110 \oplus 1100) = 1011 \oplus 1010 = 0001$$
+Round 2: 
+$$L_2 = R_1 = 0001$$
+$$R_2 = L_1 \oplus F(R_1, k_k) = 0110 \oplus (0001 \oplus 0110) = 0110 \oplus 0111 = 0001$$
+Therefore, final ciphertext:
+$$C = L_2, R_2 = 0001 0001$$
+Decryption:
+Do the reverse of the above, will get back 10110110.
+### Substitution-Permutation Networks (SPNs)
+Another way to construct a block cipher (PRP).
+
+
