@@ -29,6 +29,16 @@ Key Theorem:
 - If one-way functions exist, then pseudorandom generators exist
 $$\text{OWFs} \Leftrightarrow \text{PRGs}$$
 Proof of how to construction a PRG from an OWF..
+### Cryptographic Hash Function
+It is a function that takes in a string of arbitrary length, and returns a string of fixed length.
+Satisfies these properties:
+1. Deterministic: same input -> same output
+2. Preimage resistance: Infeasible to go backward
+3. Second preimage resistance: You can't find another input that has the same hash as some given input. (uniqueness, but "infeasible", not impossible)
+4. Collision resistance: It is hard to find two inputs that have the same hash. 
+5. Avalanche Effect: Changing one bit in the input should flip about half the bits of the output (small change -> big impact)
+
+
 ## 2.2 Stream Ciphers
 Main idea: use a PRG to generate a keystream, then XOR it with the plaintext.
 Let:
