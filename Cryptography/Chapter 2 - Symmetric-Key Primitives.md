@@ -152,3 +152,45 @@ Fast and parallelizable, but has a flaw:
 - **The same plaintext block always encrypts to the same ciphertext block**
 	- Leaks patterns, violates IND-CPA
 - ECB penguin
+### Cipher Block Chaining (CBC)
+Basically, the encryption of the current block depends on the encryption of the previous block. The first block is a random vector.
+#### Encryption
+$$C_0 = IV$$
+$$C_1=E_k(M_1 \oplus C_0)$$
+$$\vdots$$
+$$C_i=E_k(M_i\oplus C_{i-1})$$
+#### Decryption
+$$M_i = D_k(C_i)\oplus C_{i-1}$$
+This works because:
+$$C_i = E_k(M_i\oplus C_{i-1}) \Rightarrow M_i \oplus C_{i-1} = D_k(C_i) \Rightarrow M_i = D_k(C_i) \oplus C_{i-1}$$
+- IV adds randomness, so encrypting the same message twice yields different ciphertexts
+- Not parallelizable (each block depends on the previous)
+### Counter Mode (CTR)
+The problem with CBC is that it is sequential (can't encrypt $M_3$ until you've encrypted $M_2$)
+- This is slow
+- CTR solves this by turning a block cipher into a stream cipher
+CTR doesn't encrypt the plaintext directly.
+- Generates a keystream using the block cipher and a counter
+- XORs the keystream with the plaintext (like a stream ciphter)
+#### Encryption
+- Nonce: value that is unique for each encryption under the same key. Doesn't need to be secret, but shouldn't repeat
+	- Ensures that the same message encrypted twice produces different ciphertexts
+- Counter: integer that increments by 1 for each block. 
+	- Add the nonce with this counter
+	- Ensures each block input is unique.
+1. For each block index $i$, compute:
+$$Keystream_i = E_k(Nonce || i)$$
+2. XOR with the plaintext:
+$$C_i = M_i \oplus Keystream_i$$
+#### Decryption
+1. Regenerate the same keystream using the nonce and the counter
+2. XOR the ciphertext
+$$M_i = C_i \oplus E_k(Nonce||i)$$
+CTR is IND-CPA secure if:
+- the block cipher is secure
+- the nonce is never reused with the same key
+Advantages:
+- Each keystream block is independent
+
+
+
