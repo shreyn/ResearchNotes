@@ -80,7 +80,7 @@ This is a function that is:
 - Bijective (invertible)
 - Efficient
 - Indistinguishable from random permutation
-**So basically the same as PRF, but with the requirement of invertibility.**
+**So basically the same as PRF, but with the require ment of invertibility.**
 A PRG takes a small input, and converts to a long output (not invertible).
 A Block Cipher takes a fixed size input, outputs a fixed size output (invertible)
 - basically it is a pseudorandom shuffle of the $2^n$ possible n-bit strings.
