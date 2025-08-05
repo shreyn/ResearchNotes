@@ -201,6 +201,9 @@ CTR is IND-CPA secure if:
 - the nonce is never reused with the same key
 Advantages:
 - Each keystream block is independent
-
+## 2.5 Message Authentication Codes (MACs)
+So far, we have looked at confidentiality (keeping the message secret).
+But imagine you receive an encrypted message. *How do you know it wasn't tampered with?*
+We need **integrity** (message wasn't changed) and **authentication** (message came from the right sender).
 
 
