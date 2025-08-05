@@ -203,7 +203,42 @@ Advantages:
 - Each keystream block is independent
 ## 2.5 Message Authentication Codes (MACs)
 So far, we have looked at confidentiality (keeping the message secret).
-But imagine you receive an encrypted message. *How do you know it wasn't tampered with?*
-We need **integrity** (message wasn't changed) and **authentication** (message came from the right sender).
+- But imagine you receive an encrypted message. *How do you know it wasn't tampered with?*
+- We need **integrity** (message wasn't changed) and **authentication** (message came from the right sender).
+MAC is a seal that proves the sender has the secret key, and the message hasn't been tampered with.
+Suppose A and B share a secret key $k$. 
+- Sending a message:
+	- A has a message $m$. 
+	- Compute a MAC tag: $t = MAC_k(m)$
+	- Sends $(m,t)$ to B.
+- Receiving a message:
+	- B receives $(m,t)$
+	- Checks if $t$ is valid by computing: $Vrfy_k(m,t) \in \{0,1\}$
+	- If result is 1, accepts, if 0, rejects
+*Even if the attacker sees many valid $(m,t)$ pairs, they can't generate a valid tag for a new message without the secret key, and can't tamper with $m$ and still produce a valid $t$.*
+## 2.6 CBC-MAC (Cipher Block Chaining Message Authentication Code)
+*How do we actually build a secure MAC function?*
+CBC-MAC uses a block cipher to compute the tag.
+Review of CBC:
+- XOR the message block with the previous ciphertext block
+- Encrypt the result using block cipher
+	- C_0 = IV  (some random initialization value)
+	- C_1 = E_k(M_1 ⊕ C_0)
+	- C_2 = E_k(M_2 ⊕ C_1)
+### Steps:
+Assume:
+- Block size = 128 bits
+- Message is split into blocks: $m_1, m_2, ..., m_n$
+- Key $k$ is shared between sender and receiver
+- Block cipher $E_k$
+Define an initial value:
+- $V_0 = 0^{128}:$ a block of 128 zero bits
+Compute:
+$$V_1 = E_k(m_1 \oplus V_0)$$
+$$V_2 = E_k(m_2 \oplus V_1)$$
+$$\vdots$$
+$$V_n = E_k(m_n \oplus V_{n-1})$$
+**MAC Tag = $V_n$**
+
 
 
