@@ -216,6 +216,7 @@ Suppose A and B share a secret key $k$.
 	- Checks if $t$ is valid by computing: $Vrfy_k(m,t) \in \{0,1\}$
 	- If result is 1, accepts, if 0, rejects
 *Even if the attacker sees many valid $(m,t)$ pairs, they can't generate a valid tag for a new message without the secret key, and can't tamper with $m$ and still produce a valid $t$.*
+- EUF-CMA
 ## 2.6 CBC-MAC (Cipher Block Chaining Message Authentication Code)
 *How do we actually build a secure MAC function?*
 CBC-MAC uses a block cipher to compute the tag.
@@ -239,6 +240,18 @@ $$V_2 = E_k(m_2 \oplus V_1)$$
 $$\vdots$$
 $$V_n = E_k(m_n \oplus V_{n-1})$$
 **MAC Tag = $V_n$**
-
-
-
+## 2.7 Authenticated Encryption
+We need both encryption and authentication.
+Most secure and widely used method:
+### Encrypt-then-MAC
+Sender:
+1. Encrypt the message: $c = Enc_k(m)$
+2. Compute tag: $t = MAC_k(c)$
+3. Send $(c,t)$
+Receiver:
+4. Verifies $t = MAC_k(c)$
+5. If tag is valid, decrypts $m = Dec_k(C)$ 
+### Formal Definition of AE Scheme
+1. KeyGen: generate a secret key $k$
+2. Enc(k,m): encrypt a message and produce a ciphertext + tag
+3. Dec(k,c,t): verify tag and decrypt
