@@ -2,13 +2,13 @@
 **Def**: A hash function is a deterministic function that takes an input of arbitrary length and outputs a fixed length string.
 $$H: \{0,1\}^* \rightarrow \{0,1\}^n$$
 - Must be efficient and deterministic
-### Why do we Hash things?
+### Why do we hash things?
 - Fingerprinting a message: instead of storing and entire file, just store the short hash.
 - Integrity checking: if someone sends a file, hash it, and compare it with sender's hash. If altered, the hash will be different
 - Passwords: store the hash of a password, not the password itself. On login, hash the entered password and compare
 - Digital signatures: instead of signing an entire document, sign just its hash
 - Merkle trees: efficiently verify the integrity of a part of a dataset
-### What makes a Hash function Cryptographic?
+### What makes a hash function Cryptographic?
 A cryptographic hash function (CHF) must satisfy some key security properties:
 1. **Preimage Resistance**: Given a hash output $h$, it should be computationally infeasible to find any input $x$ s.t. $H(x) = h$
 	- If you know the hash, you shouldn't be able to recover the original input
@@ -47,4 +47,6 @@ Therefore, collision attacks are strictly easier:
 - Collision: $2^{n/2}$
 Hash output size must be $\geq 2 \times$ desired security level
 - Need a 256-bit output to get a 128-bit collision resistance
-- 
+## 3.2 Classic Constructions
+How are real world cryptographic hash functions built?
+
