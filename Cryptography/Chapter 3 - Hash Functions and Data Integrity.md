@@ -49,4 +49,6 @@ Hash output size must be $\geq 2 \times$ desired security level
 - Need a 256-bit output to get a 128-bit collision resistance
 ## 3.2 Classic Constructions
 How are real world cryptographic hash functions built?
+- We compress the message gradually, one block at a time
+### Compression Function
 
