@@ -106,3 +106,5 @@ This ensures the last block always contains the original message length.
 **Why include the length?**
 - if an attacker knows the final state $H_t$, they can continue the chain by appending more blocks and computing further $H_{t+1}, ...$ (without knowing the original message!)
 - By appending the length, you "lock in" the messages' original size, so the attacker can't add more blocks. 
+## 3.3 Merkle-Damgård Security Properties
+*If the compression function is collision-resistant, does the overall Merkle-Damgård has stay secure?*
