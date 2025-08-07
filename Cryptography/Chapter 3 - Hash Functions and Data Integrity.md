@@ -56,12 +56,53 @@ $$f: \{0,1\}^{n+b} \rightarrow \{0,1\}^n$$
 - $n$: size of internal state and final hash output 
 - $b$: size of each message block
 - So $n+b \rightarrow n$ (compression!)
+**How to build a compression function**:
+We want something that is:
+- deterministic and efficient
+- collision-resistant
+- works on fixed-length inputs
+- outputs fixed-length
+We can build it using simpler primitives like block ciphers.
+#### Davies-Meyer Construction
+Let $E_k(x)$ be a block cipher:
+- $k \in \{0,1\}^n$ : key
+- $x \in \{0,1\}^n$ : plaintext block
+We will *misuse* the block cipher to mix a message block and a state:
+Define the compression function $f$ as:
+$$f(h,m) = E_m(h) \oplus k$$
+Where:
+- $h$: current hash state
+- $m$: message block
+- $E_m(h)$: encrypt state using **message block as key**
+- final result is ciphertext (hash state with message as key) XOR original state
+Why is this good?
+- not invertible, even though the block cipher is
+- cipher is pseudorandom, so $f$ behaves like a random function
+- naturally binds the message and the state together 
 ### Merkle-Damgård Iterated Construction
-Input:
+**Input**:
 - message $M$ (arbitrary length)
 - compression function $f$
 - block size $b$ bits
 - output length $n$ bits
 - initial state: constant value (IV), often all zeros of fixed standard value
-Procedure:
-1. 
+**Procedure**:
+1. Pad ([[#Padding]]) the message so that the total length is a multiple of $b$ bits
+2. Split the padded message into $m_1, m_2, ..., m_t$, each of length $b$
+3. Initialize $H_0 = IV$
+4. Loop:
+$$H_i = f(H_{i-1}, m_i)$$
+	- Each round takes the previous hash state $H_{i-1}$, and new block $m_i$
+5. Final output: $H(M) = H_i$
+6. 
+#### Padding
+Why pad the message? We need it to be a multiple of $b$, so we can split it into clean blocks.
+**Procedure**:
+1. Append a single $1$ bit to the message
+2. Append $0$ bits until the length is congruent to $b-64 \mod b$
+	- This leaves 64 bits of space at the end of the last block
+3. Append a 64-bit representation of the original message length (in bits)
+This ensures the last block always contains the original message length.
+**Why include the length?**
+- if an attacker knows the final state $H_t$, they can continue the chain by appending more blocks and computing further $H_{t+1}, ...$ (without knowing the original message!)
+- By appending the length, you "lock in" the messages' original size, so the attacker can't add more blocks. 
