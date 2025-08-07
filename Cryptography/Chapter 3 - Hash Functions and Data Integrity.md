@@ -57,4 +57,11 @@ $$f: \{0,1\}^{n+b} \rightarrow \{0,1\}^n$$
 - $b$: size of each message block
 - So $n+b \rightarrow n$ (compression!)
 ### Merkle-Damgård Iterated Construction
-
+Input:
+- message $M$ (arbitrary length)
+- compression function $f$
+- block size $b$ bits
+- output length $n$ bits
+- initial state: constant value (IV), often all zeros of fixed standard value
+Procedure:
+1. 
