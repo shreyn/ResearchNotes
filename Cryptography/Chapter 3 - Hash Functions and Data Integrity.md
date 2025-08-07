@@ -51,4 +51,10 @@ Hash output size must be $\geq 2 \times$ desired security level
 How are real world cryptographic hash functions built?
 - We compress the message gradually, one block at a time
 ### Compression Function
+Fixed-length, deterministic function:
+$$f: \{0,1\}^{n+b} \rightarrow \{0,1\}^n$$
+- $n$: size of internal state and final hash output 
+- $b$: size of each message block
+- So $n+b \rightarrow n$ (compression!)
+### Merkle-Damgård Iterated Construction
 
