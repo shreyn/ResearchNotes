@@ -107,4 +107,20 @@ This ensures the last block always contains the original message length.
 - if an attacker knows the final state $H_t$, they can continue the chain by appending more blocks and computing further $H_{t+1}, ...$ (without knowing the original message!)
 - By appending the length, you "lock in" the messages' original size, so the attacker can't add more blocks. 
 ## 3.3 Merkle-Damgård Security Properties
-*If the compression function is collision-resistant, does the overall Merkle-Damgård has stay secure?*
+*If the compression function is collision-resistant, does the overall Merkle-Damgård hash stay secure?*
+**Proof: contrapositive.** 
+Assume compression function is collision resistant, and an adversary found a collision in the hash function ($H(M) = H(M'), M \neq M'$). WTS there is a collision in compression function.
+- Case 1: $M, M'$ are the same length.
+	- Both messages produce the same number of blocks
+	- If $M \neq M'$, then some blocks must differ. So $m_i \neq m_i'$ for some $i$
+	- But since the previous hash states are the same until round $i$, $f(H_{i-1}, m_i) = f(H_{i-1}, m_i')$
+	- Therefore, there is a collision in the compression function, which contradicts the assumption. 
+- Case 2: $M, M'$ are different lengths
+	- We prevent adding more blocks to the message by the padding scheme
+	- We append the bit-length of the original message at the end of the padding, so even if the message contents are similar, the length will be different
+	- So the final block will be different, so different output
+#### Limitations
+Second preimage attacks:
+- If the message $M$ is very long $2^k$ blocks, then a second preimage can be found much faster than brute force time $2^n$. 
+	- For a long message, there will be many repeated intermediate states, so it is easier to splice in a different message that leads to the same final hash
+- Basically, MD compression is **state-limited** (doesn't scale with message length)
