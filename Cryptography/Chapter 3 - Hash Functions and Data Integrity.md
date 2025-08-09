@@ -94,7 +94,6 @@ Why is this good?
 $$H_i = f(H_{i-1}, m_i)$$
 	- Each round takes the previous hash state $H_{i-1}$, and new block $m_i$
 5. Final output: $H(M) = H_i$
-6. 
 #### Padding
 Why pad the message? We need it to be a multiple of $b$, so we can split it into clean blocks.
 **Procedure**:
