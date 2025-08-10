@@ -131,3 +131,24 @@ Hash functions give integrity: If A sends B a file and the hash, B can recompute
 - Send both to Bob
 Bob's check will pass, since *nothing proves who computed the hash*.
 We need **message authentication**.
+*Can come back later...*
+## 3.6 Merkle Trees
+We might need to convince someone that a small piece of a larger dataset is authentic, **without sending the whole dataset**.
+Idea:
+- Beforehand, run all the data through a process that creates a short fingerprint of the entire thing (**root hash**)
+- Later, when someone asks for just one piece,
+	- Give them that piece + a short chain of hashes (a **proof**)
+	- They can use those hashes to rebuild the root hash without needing the rest of the data
+	- If it matches the published root hash, they know the piece is genuine
+Why this works:
+- the hash function makes it impractical to change the data without changing the root hash
+- the "short chain" is possible since we arrange the data in a tree (only send hashes along the path from that data piece to the root)
+- Instead of downloading everything, only download $log_2(N)$ hashes
+Analogy:
+- Lego pyramid, where top brick is root hash
+	- Every brick below is built from the two bricks under it
+- To prove one bottom brick is in the pyramid,
+	- Don't need to bring the whole pyramid
+	- Just bring that brick + the matching bricks along the way up to the top
+	- Anyone can rebuild your path to the top brick and check if it matches the known pyramid top.
+- *Any change to the bottom brick will change the root hash, since **Merkle trees bind all leaves together via hashing***.
