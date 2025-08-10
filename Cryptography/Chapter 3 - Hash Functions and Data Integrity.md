@@ -123,3 +123,4 @@ Second preimage attacks:
 - If the message $M$ is very long $2^k$ blocks, then a second preimage can be found much faster than brute force time $2^n$. 
 	- For a long message, there will be many repeated intermediate states, so it is easier to splice in a different message that leads to the same final hash
 - Basically, MD compression is **state-limited** (doesn't scale with message length)
+## 3.5 HMAC
