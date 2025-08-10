@@ -124,3 +124,10 @@ Second preimage attacks:
 	- For a long message, there will be many repeated intermediate states, so it is easier to splice in a different message that leads to the same final hash
 - Basically, MD compression is **state-limited** (doesn't scale with message length)
 ## 3.5 HMAC
+Hash functions give integrity: If A sends B a file and the hash, B can recompute the hash and check if it matches (knows the file hasn't changed).
+***BUT:*** If Eve intercepts the file and hash, can:
+- Replace file with own file
+- Compute new hash
+- Send both to Bob
+Bob's check will pass, since *nothing proves who computed the hash*.
+We need **message authentication**.
