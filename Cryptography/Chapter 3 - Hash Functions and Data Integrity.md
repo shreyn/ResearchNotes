@@ -152,3 +152,14 @@ Analogy:
 	- Just bring that brick + the matching bricks along the way up to the top
 	- Anyone can rebuild your path to the top brick and check if it matches the known pyramid top.
 - *Any change to the bottom brick will change the root hash, since **Merkle trees bind all leaves together via hashing***.
+### Structure of a Merkle Tree
+Start with $N$ data blocks (leaves):
+$$D_1, D_2, \cdots , D_N$$
+1. Hash each block: $H_1 = hash(D_1), H_2 = hash(D_2), \cdots$
+2. Pair them up and hash the pair:
+$$P_{12} = hash(H_1 || H_2)$$
+$$P_{3,4} = hash(H_3 || H_4)$$
+3. Keep combining up until one hash remains (root)
+$$Root = hash(something || something)$$
+**This root hash is the fingerprint of the whole dataset**. 
+- You can see how changing one block anywhere in the dataset will flow up the tree and change the root hash
