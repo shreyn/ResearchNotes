@@ -175,4 +175,5 @@ Verifier does:
 - *Merkle tree is something we construct*
 	- Taking the bits, splitting into chunks, hashing chunks, pairing, hashing, repeat till root
 ## 3.7 Applications of Hash Functions
-  
+ Five main categories:
+### Data Integrity Verification
