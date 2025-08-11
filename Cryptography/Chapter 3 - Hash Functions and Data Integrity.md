@@ -175,5 +175,18 @@ Verifier does:
 - *Merkle tree is something we construct*
 	- Taking the bits, splitting into chunks, hashing chunks, pairing, hashing, repeat till root
 ## 3.7 Applications of Hash Functions
- Five main categories:
-### Data Integrity Verification
+1. Password Storage
+	- Websites don't store your password, they store the hash of the password
+	- On login, you type your password. They hash it and compare to their stored hash
+2. Git / Version control
+	- Every commit in Git is identified with a hash of the files in the commit and the metadata
+3. Blockchain
+	- Bitcoin block headers contain a SHA-256 hash of the previous block's header
+	- Transactions are organized in a Merkle tree
+	- Proof of mining is: "Find a nonce so that SHA256(block header) < target"
+4. Digital signatures
+	- When you sign a document, you don't sign the entire file, you hash it first
+5. File integrity checks
+	- Download pages provide SHA-256 checksums
+6. Peer-to-Peer Networks (BitTorrent)
+	- later?
