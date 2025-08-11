@@ -163,3 +163,16 @@ $$P_{3,4} = hash(H_3 || H_4)$$
 $$Root = hash(something || something)$$
 **This root hash is the fingerprint of the whole dataset**. 
 - You can see how changing one block anywhere in the dataset will flow up the tree and change the root hash
+### How a Merkle Proof works
+Suppose you want to prove a block is in the dataset.
+You send:
+- The actual block 
+- The authentication path (hashes needed to rebuild the root)
+Verifier does:
+- Hash the block, keep hashing upwards along the path
+- Compare the calculated root hash to the published root hash
+**NOTE**: the file isn't actually a tree (just some bits).
+- *Merkle tree is something we construct*
+	- Taking the bits, splitting into chunks, hashing chunks, pairing, hashing, repeat till root
+## 3.7 Applications of Hash Functions
+  
