@@ -23,4 +23,16 @@ $$a \cdot a^{-1} \equiv 1 \mod n$$
 **Existence of Multiplicative Inverse Theorem**:
 An element $a \in \mathbb{Z}_n$ has a mult. inverse iff $\gcd(a,n) = 1$.
 - $a$ is coprime to $n$
-- c
+- if $n$ is prime, every element has an inverse.
+**How to find Multiplicative Inverses**:
+$$a \cdot a^{-1} \equiv 1 \mod n $$
+is equivalent to solving
+$$a \cdot x + n \cdot y = 1$$
+- Linear Diophantine equation
+##### Extended Euclidean Algorithm
+- Same as euclidean algo, but also in reverse to solve for $x$
+## 4.2 Fermat's Little Theorem
+If $p$ is prime, and $a \in \mathbb{Z}$  s.t. $\gcd(a,b) = 1$ , then:
+$$a^{p-1} \equiv 1 \mod p$$
+which is equivalent to:
+$$a^p \equiv a \mod p$$
