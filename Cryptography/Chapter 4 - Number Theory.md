@@ -23,4 +23,4 @@ $$a \cdot a^{-1} \equiv 1 \mod n$$
 **Existence of Multiplicative Inverse Theorem**:
 An element $a \in \mathbb{Z}_n$ has a mult. inverse iff $\gcd(a,n) = 1$.
 - $a$ is coprime to $n$
-- 
+- c
