@@ -41,4 +41,4 @@ $$
 $$
 - the smallest affine set that contains $C$
 - if $S$ is an affine set, $C \subseteq S$, then aff $C \subseteq S$
-- 
+### 2.1.3 Affine dimension and relative interior
