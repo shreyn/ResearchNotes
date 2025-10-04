@@ -46,7 +46,27 @@ $$\text{minimize} \hspace{1em} c^Tx$$
 $$\text{subject to} \hspace{1em} a_i^T x \leq b_i, \hspace{1em} i = 1,\dots, m $$
 - Complexity: $n^2 m$
 ## 1.3 Convex Optimization
-
-
+**Convex optimization**: objective and constraint functions are convex $$f_i(\alpha x + \beta y) \leq \alpha f_i(x) + \beta f_i (y)$$
+- $x, y \in \mathbb{R}^n, \forall \alpha, \beta \in \mathbb{R}_{\geq 0}$, with $\alpha + \beta = 1$ 
+Using convex optimization is difficult.
+- If you can formulate a practical problem as a convex optimization problem, then you have solved the problem
+## 1.4 Nonlinear Optimization
+Objective or constraint functions are not linear, and not known to be convex. 
+- No effective methods for solving the general nonlinear problem
+### 1.4.1 Local Optimization
+We compromise, and instead of finding an $x$ that minimizes over all feasible points, we find a point that is **locally optimal**. 
+- minimizes objective function among feasible points around it, but not guaranteed to have lower objective value that other feasible points
+Local optimization methods are widely used. 
+Some disadvantages:
+- requires an initial guess for the optimization variable
+- Little info is provided about how far from global optimal the local solution is
+- Sensitive to param values
+So local optimization is more of an art than a science. 
+**Interesting tradeoff:**
+- formulating a practical problem as a nonlinear optimization problem is easy, but solving it is hard
+- Formulating a problem into convex optimization is hard, but solving is easy
+### 1.4.2 Global Optimization
+The true global solution is found, but the compromise is efficiency.
+- worst case complexity grows exponentially with the problem size
 
 
