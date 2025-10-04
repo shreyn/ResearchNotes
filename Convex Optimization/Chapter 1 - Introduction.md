@@ -44,6 +44,8 @@ $$\sum^k_{i=1}w_i(a_i^T x - b_i)^2$$
 Objection and constraint functions are linear:
 $$\text{minimize} \hspace{1em} c^Tx$$
 $$\text{subject to} \hspace{1em} a_i^T x \leq b_i, \hspace{1em} i = 1,\dots, m $$
+- Complexity: $n^2 m$
+## 1.3 Convex Optimization
 
 
 
