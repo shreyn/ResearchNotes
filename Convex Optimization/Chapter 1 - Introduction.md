@@ -41,7 +41,9 @@ $$\sum^k_{i=1}w_i(a_i^T x - b_i)^2$$
 	- $w_1, \dots, w_k$ are positive
 	- Weights are used to influence a solution
 ### 1.2.2 Linear Programming
-
+Objection and constraint functions are linear:
+$$\text{minimize} \hspace{1em} c^Tx$$
+$$\text{subject to} \hspace{1em} a_i^T x \leq b_i, \hspace{1em} i = 1,\dots, m $$
 
 
 
