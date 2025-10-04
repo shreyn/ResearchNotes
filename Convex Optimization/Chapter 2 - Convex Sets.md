@@ -19,4 +19,26 @@ Can be generalized to more than two points.
 $$
 x_{1}, \dots , x_{k} \in C, \quad \theta_{1} + \theta_{k} = 1 \qquad \implies \theta_{1}x_{1} + \dots + \theta_{1}x_{k} \in C
 $$
-
+**A decomposition**: 
+If $C$ is a affine set, and $x_{0} \in C$, then the set
+$$
+ V =C - x_{0} = \{x-x_{0} | x \in C\}
+$$
+is a subspace (closed under addition and scalar mult)
+Therefore, the set $C$ can be expressed as:
+$$
+ C = V+ x_{0} = \{v + x_{0} | v \in V\}
+$$
+- a subspace plus an offset.
+Note: the choice of $x_{0}$ doesn't matter. 
+Dimension of C is the dimension of the subspace V
+**In other words: every affine set is just a linear subspace shifted by some offset point**.
+- constructing $V$ is just bringing the affine set back to the origin, so it is a subspace
+- Captures the shape of C, but centered at origin
+**Affine hull**: set of all affine combinations of points in $C \subseteq \mathbb{R}^n$ 
+$$
+\text{aff} \,C =  \{\theta_{1}x_{1} + \dots + \theta_{k}x_{k} | x_{1}, \dots, x_{k} \in C, \quad \theta_{1} + \dots + \theta_{k} = 1 \}
+$$
+- the smallest affine set that contains $C$
+- if $S$ is an affine set, $C \subseteq S$, then aff $C \subseteq S$
+- 
