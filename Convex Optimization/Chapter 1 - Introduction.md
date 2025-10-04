@@ -68,5 +68,11 @@ So local optimization is more of an art than a science.
 ### 1.4.2 Global Optimization
 The true global solution is found, but the compromise is efficiency.
 - worst case complexity grows exponentially with the problem size
+Used for problems with a small number of variables, or when computing time is not critical.
+### 1.4.3 Role of convex optimization in nonconvex problems
+Can convert a nonconvex problem into an approximate convex problem
+- Solve this approximate problem for the exact solution for the convex problem
+- This point is then used as the starting point for the local optimization method, applied to the original nonconvex problem
+- 
 
 
