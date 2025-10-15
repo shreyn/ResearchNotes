@@ -145,4 +145,23 @@ $$
 - smallest convex cone that contains $C$.
 - Quadrant from two rays
 - ![[Pasted image 20251009172530.png]]
+
+### Summary:
+- Affine sets: every line through points stays inside the set (extends to infinity)
+	- Ex: lines and planes are affine
+	- A square / triangle is not affine, since connecting points may extend outside
+- Convex: region between points (line segment between them)
+	- triangle is convex
+	- A donut is not (space in the middle)
+- NOTE: **All affine sets are convex!**
+
 ## 2.2 Important Examples
+Some simple examples:
+- $\emptyset$, a point, all of $\mathbb{R}^n$ are affine and convex subsets of $\mathbb{R}^n$
+- Any line is affine
+- A line segment is convex, but not affine
+### 2.2.1 Hyperplanes and halfspaces
+**Hyperplane**:
+$$
+\{ x | a^Tx = b \}
+$$
