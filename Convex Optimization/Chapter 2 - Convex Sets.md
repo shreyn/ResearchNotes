@@ -161,7 +161,53 @@ Some simple examples:
 - Any line is affine
 - A line segment is convex, but not affine
 ### 2.2.1 Hyperplanes and halfspaces
-**Hyperplane**:
+#### Hyperplane:
 $$
-\{ x | a^Tx = b \}
+\{ x \ | \ a^Tx = b \}
 $$
+- normal vector $a$ tells the direction of the plane (perp to plane) 
+- $b$ tells how far the plane is from the origin
+- Ex:
+	- $a = [0, 0, 1]$, $b = 3$.
+	- Then $a^T = b \implies 0x + 0y + 1z = 3\implies z = 3$
+	- This is a horizontal plane $z = 3$
+Another representation:
+$$
+\{ x \ | \ a^T (x-x_{0}) = 0 \}
+$$
+Another representation;
+$$
+x_{0} + a^\perp
+$$
+- *Hyperplane is made of an offset $x_{0}$ and all vectors orthogonal to the normal vector $a$*.
+- ![[Pasted image 20251015155411.png]]
+#### Halfspaces:
+A hyperplane divides $\mathbb{R}^n$ into two halfspaces.
+$$
+\{ x \ | \ a^T x \leq b \}
+$$
+![[Pasted image 20251015155612.png]]
+- Notes: **halfspaces are convex, but not affine.**
+Another representation:
+$$
+\{ x \ | \ a^T(x-x_{0}) \leq 0 \}
+$$
+- *The halfspace is a point/vector $x_{0}$ and all vectors that are obtuse/right angle with the normal vector $a$.*
+- ![[Pasted image 20251015155903.png]]
+### 2.2.2 Euclidean balls and ellipsoids
+#### Euclidean ball
+$$
+B(x_{c}, r) = \{ x \ | \ \lVert x-x_{c} \rVert _{2} \leq r \} = \{ x \ | \ (x-x_{c})^T (x-x_{c}) \leq r^2 \}
+$$
+- *So contains all points within distance $r$ of center $x_{c}$*.
+**Ball is convex!**
+#### Ellipsoid
+$$
+E = \{  x \ | \ (x-x_{c})^T P^{-1}(x-x_{c}) \leq 1 ) \}
+$$
+- $x_{c}$ is center
+- $P$ is a PSD matrix that tells how far the ellipsoid extends in each direction from $x_{c}$
+	- length of axes are $\sqrt{ \lambda_{i} }$
+- A general form of a ball!
+	- $P = r^2 I$
+**Ellipsoid is convex!**
