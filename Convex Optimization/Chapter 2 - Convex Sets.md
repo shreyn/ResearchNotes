@@ -213,3 +213,9 @@ $$
 **Ellipsoid is convex!**
 
 ### 2.2.3 Norm balls and norm cones
+Just a general form of the euclidean ball?
+### 2.2.4 Polyhedra
+**Def**: solution set of a finite number of linear equalities and inequalities:
+$$
+\mathbf{P} = \{  x \ | \ a_{j}^T x \leq b_{j}, \ j \}
+$$
