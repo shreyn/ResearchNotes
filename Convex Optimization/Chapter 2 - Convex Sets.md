@@ -211,3 +211,5 @@ $$
 - A general form of a ball!
 	- $P = r^2 I$
 **Ellipsoid is convex!**
+
+### 2.2.3 Norm balls and norm cones
