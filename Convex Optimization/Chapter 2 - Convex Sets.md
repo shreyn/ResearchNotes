@@ -217,5 +217,23 @@ Just a general form of the euclidean ball?
 ### 2.2.4 Polyhedra
 **Def**: solution set of a finite number of linear equalities and inequalities:
 $$
-\mathbf{P} = \{  x \ | \ a_{j}^T x \leq b_{j}, \ j \}
+\mathbf{P} = \{  x \ | \ a_{j}^T x \leq b_{j}, \ c_{j}^Tx = d_{j}\}
 $$
+- intersection of halfspaces and hyperplanes
+**Are convex sets**!
+![[Pasted image 20251017154247.png]]
+- notice the normal vectors
+
+#### Simplexes
+- family of polyhedra
+- Pick $k+1$ points $v_{0}, \dots, v_{k} \in \mathbb{R}^n$. 
+	- if they are affinely independent (don't lie all on the same line/plane), then they form a simplex
+$$
+C = \text{conv}\{ v_{0}, \dots , v_{k} \}
+$$
+$$
+C =  \{ \theta_{0}v_{0}+\dots+\theta_{k}v_{k} \}
+$$
+	- $\theta_{i} \geq 0$
+	- They all sum to 1
+- 
