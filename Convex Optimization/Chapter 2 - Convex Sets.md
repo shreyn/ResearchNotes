@@ -236,4 +236,11 @@ C =  \{ \theta_{0}v_{0}+\dots+\theta_{k}v_{k} \}
 $$
 	- $\theta_{i} \geq 0$
 	- They all sum to 1
-- 
+- *Basically a convex hull of some points that are not on the same plane (affinely indepenedent)*
+	- *A kind of weighted average of each vertex*
+	- *must be nonegative to stay "between" points, and must sum to 1 so it doesn't scale beyond the region*
+- Ex:
+	- 1D: two points: a line
+	- 2D: 3 points: triangle
+	- 3D: 4 points: tetrahedron
+**Suppose we want to rewrite the simplex (convex combination) definition into  Polyhedron form (set of linear equalities and inequalities)**.
