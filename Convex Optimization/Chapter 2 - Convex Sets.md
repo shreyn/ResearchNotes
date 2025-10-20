@@ -244,3 +244,14 @@ $$
 	- 2D: 3 points: triangle
 	- 3D: 4 points: tetrahedron
 **Suppose we want to rewrite the simplex (convex combination) definition into  Polyhedron form (set of linear equalities and inequalities)**.
+- *want to show simplexes are special cases of polyhedra*
+- ???
+
+## 2.3 Operations that preserve convexity
+### 2.3.1 Intersection
+Let $S_{1}, S_{2}$ be convex. Then $S_{1} \cap S_{2}$ is convex. 
+- extends to infinite intersection
+- Ex: a polyhedra is the intersection of halfspaces and hyperplanes (which are convex), so the polyhedra is convex.
+A convex set can be expressed as the intersection of some halfspaces.
+- Converse is true: every closed convex set is an intersection of halfspaces.
+### 2.3.2 Affine functions
