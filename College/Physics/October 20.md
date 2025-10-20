@@ -1,5 +1,19 @@
+## Refraction
 - wave front (concentric circles)
 - ray: arrow showing energy moving outward from center
 	- if moving through a medium that has a slow and fast section, the ray can bend
 		- **bends toward the slower region**
-- 
+	- Light rays move slower in water
+	- **fiber optic cables** have a gradient of slow region in the middle, fast regions on the edges, so light will always bend and stay in the center
+- Energy propagation
+	- waves carry energy, unless dissipated in thermal energy
+	- How much energy will arrive at the receiver?
+		- Depends on **dimensionality of the wave propagation**
+	- Dilutes depending on the distance from the center (radius)
+		- no dilution in 1D, dilution of $\frac{1}{r}$ in 2D, dilution of $\frac{1}{r^2}$ in 3D
+- **Sound Channel in Ocean**:
+	- There is a layer in ocean (thermocline layer) that has slowest sound velocity
+	- This means that there is a "sound channel" in the ocean (sound stays in this layer)
+	- This converts a 3D sound space into a 2D space, so the dilution is much less
+	- This allowed the ping for downed aircraft
+	- 
