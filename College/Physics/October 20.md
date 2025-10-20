@@ -1,0 +1,5 @@
+- wave front (concentric circles)
+- ray: arrow showing energy moving outward from center
+	- if moving through a medium that has a slow and fast section, the ray can bend
+		- **bends toward the slower region**
+- 
